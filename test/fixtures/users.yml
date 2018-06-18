@@ -1,0 +1,109 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  auth: MyString
+  confirmed: false
+  policyagreed: false
+  deleted: false
+  suspended: false
+  mnethostid: 
+  username: MyString
+  password: MyString
+  idnumber: MyString
+  firstname: MyString
+  lastname: MyString
+  email: MyString
+  emailstop: false
+  icq: MyString
+  skype: MyString
+  yahoo: MyString
+  aim: MyString
+  msn: MyString
+  phone1: MyString
+  phone2: MyString
+  institution: MyString
+  department: MyString
+  address: MyString
+  city: MyString
+  country: MyString
+  lang: MyString
+  calendartype: MyString
+  theme: MyString
+  timezone: MyString
+  firstaccess: 
+  lastaccess: 
+  lastlogin: 
+  currentlogin: 
+  lastip: MyString
+  secret: MyString
+  picture: 
+  url: MyString
+  description: MyText
+  descriptionformat: 1
+  mailformat: false
+  maildigest: false
+  maildisplay: 1
+  autosubscribe: false
+  trackforums: false
+  timecreated: 
+  timemodified: 
+  trustbitmask: 
+  imagealt: MyString
+  lastnamephonetic: MyString
+  firstnamephonetic: MyString
+  middlename: MyString
+  alternatename: MyString
+
+two:
+  auth: MyString
+  confirmed: false
+  policyagreed: false
+  deleted: false
+  suspended: false
+  mnethostid: 
+  username: MyString
+  password: MyString
+  idnumber: MyString
+  firstname: MyString
+  lastname: MyString
+  email: MyString
+  emailstop: false
+  icq: MyString
+  skype: MyString
+  yahoo: MyString
+  aim: MyString
+  msn: MyString
+  phone1: MyString
+  phone2: MyString
+  institution: MyString
+  department: MyString
+  address: MyString
+  city: MyString
+  country: MyString
+  lang: MyString
+  calendartype: MyString
+  theme: MyString
+  timezone: MyString
+  firstaccess: 
+  lastaccess: 
+  lastlogin: 
+  currentlogin: 
+  lastip: MyString
+  secret: MyString
+  picture: 
+  url: MyString
+  description: MyText
+  descriptionformat: 1
+  mailformat: false
+  maildigest: false
+  maildisplay: 1
+  autosubscribe: false
+  trackforums: false
+  timecreated: 
+  timemodified: 
+  trustbitmask: 
+  imagealt: MyString
+  lastnamephonetic: MyString
+  firstnamephonetic: MyString
+  middlename: MyString
+  alternatename: MyString

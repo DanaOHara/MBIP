@@ -1,0 +1,129 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Auth</th>
+      <th>Confirmed</th>
+      <th>Policyagreed</th>
+      <th>Deleted</th>
+      <th>Suspended</th>
+      <th>Mnethostid</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Idnumber</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Emailstop</th>
+      <th>Icq</th>
+      <th>Skype</th>
+      <th>Yahoo</th>
+      <th>Aim</th>
+      <th>Msn</th>
+      <th>Phone1</th>
+      <th>Phone2</th>
+      <th>Institution</th>
+      <th>Department</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Lang</th>
+      <th>Calendartype</th>
+      <th>Theme</th>
+      <th>Timezone</th>
+      <th>Firstaccess</th>
+      <th>Lastaccess</th>
+      <th>Lastlogin</th>
+      <th>Currentlogin</th>
+      <th>Lastip</th>
+      <th>Secret</th>
+      <th>Picture</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th>Descriptionformat</th>
+      <th>Mailformat</th>
+      <th>Maildigest</th>
+      <th>Maildisplay</th>
+      <th>Autosubscribe</th>
+      <th>Trackforums</th>
+      <th>Timecreated</th>
+      <th>Timemodified</th>
+      <th>Trustbitmask</th>
+      <th>Imagealt</th>
+      <th>Lastnamephonetic</th>
+      <th>Firstnamephonetic</th>
+      <th>Middlename</th>
+      <th>Alternatename</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.auth %></td>
+        <td><%= user.confirmed %></td>
+        <td><%= user.policyagreed %></td>
+        <td><%= user.deleted %></td>
+        <td><%= user.suspended %></td>
+        <td><%= user.mnethostid %></td>
+        <td><%= user.username %></td>
+        <td><%= user.password %></td>
+        <td><%= user.idnumber %></td>
+        <td><%= user.firstname %></td>
+        <td><%= user.lastname %></td>
+        <td><%= user.email %></td>
+        <td><%= user.emailstop %></td>
+        <td><%= user.icq %></td>
+        <td><%= user.skype %></td>
+        <td><%= user.yahoo %></td>
+        <td><%= user.aim %></td>
+        <td><%= user.msn %></td>
+        <td><%= user.phone1 %></td>
+        <td><%= user.phone2 %></td>
+        <td><%= user.institution %></td>
+        <td><%= user.department %></td>
+        <td><%= user.address %></td>
+        <td><%= user.city %></td>
+        <td><%= user.country %></td>
+        <td><%= user.lang %></td>
+        <td><%= user.calendartype %></td>
+        <td><%= user.theme %></td>
+        <td><%= user.timezone %></td>
+        <td><%= user.firstaccess %></td>
+        <td><%= user.lastaccess %></td>
+        <td><%= user.lastlogin %></td>
+        <td><%= user.currentlogin %></td>
+        <td><%= user.lastip %></td>
+        <td><%= user.secret %></td>
+        <td><%= user.picture %></td>
+        <td><%= user.url %></td>
+        <td><%= user.description %></td>
+        <td><%= user.descriptionformat %></td>
+        <td><%= user.mailformat %></td>
+        <td><%= user.maildigest %></td>
+        <td><%= user.maildisplay %></td>
+        <td><%= user.autosubscribe %></td>
+        <td><%= user.trackforums %></td>
+        <td><%= user.timecreated %></td>
+        <td><%= user.timemodified %></td>
+        <td><%= user.trustbitmask %></td>
+        <td><%= user.imagealt %></td>
+        <td><%= user.lastnamephonetic %></td>
+        <td><%= user.firstnamephonetic %></td>
+        <td><%= user.middlename %></td>
+        <td><%= user.alternatename %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

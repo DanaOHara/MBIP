@@ -1,0 +1,277 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :auth %>
+    <%= form.text_field :auth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :confirmed %>
+    <%= form.check_box :confirmed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :policyagreed %>
+    <%= form.check_box :policyagreed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deleted %>
+    <%= form.check_box :deleted %>
+  </div>
+
+  <div class="field">
+    <%= form.label :suspended %>
+    <%= form.check_box :suspended %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mnethostid %>
+    <%= form.text_field :mnethostid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idnumber %>
+    <%= form.text_field :idnumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :emailstop %>
+    <%= form.check_box :emailstop %>
+  </div>
+
+  <div class="field">
+    <%= form.label :icq %>
+    <%= form.text_field :icq %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skype %>
+    <%= form.text_field :skype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :yahoo %>
+    <%= form.text_field :yahoo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aim %>
+    <%= form.text_field :aim %>
+  </div>
+
+  <div class="field">
+    <%= form.label :msn %>
+    <%= form.text_field :msn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone1 %>
+    <%= form.text_field :phone1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone2 %>
+    <%= form.text_field :phone2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :institution %>
+    <%= form.text_field :institution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lang %>
+    <%= form.text_field :lang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :calendartype %>
+    <%= form.text_field :calendartype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :theme %>
+    <%= form.text_field :theme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timezone %>
+    <%= form.text_field :timezone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstaccess %>
+    <%= form.text_field :firstaccess %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastaccess %>
+    <%= form.text_field :lastaccess %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastlogin %>
+    <%= form.text_field :lastlogin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currentlogin %>
+    <%= form.text_field :currentlogin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastip %>
+    <%= form.text_field :lastip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secret %>
+    <%= form.text_field :secret %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descriptionformat %>
+    <%= form.number_field :descriptionformat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailformat %>
+    <%= form.check_box :mailformat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maildigest %>
+    <%= form.check_box :maildigest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maildisplay %>
+    <%= form.number_field :maildisplay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :autosubscribe %>
+    <%= form.check_box :autosubscribe %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trackforums %>
+    <%= form.check_box :trackforums %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timecreated %>
+    <%= form.text_field :timecreated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trustbitmask %>
+    <%= form.text_field :trustbitmask %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagealt %>
+    <%= form.text_field :imagealt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastnamephonetic %>
+    <%= form.text_field :lastnamephonetic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstnamephonetic %>
+    <%= form.text_field :firstnamephonetic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :middlename %>
+    <%= form.text_field :middlename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alternatename %>
+    <%= form.text_field :alternatename %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
