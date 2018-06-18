@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discussion: 
+  parent: 
+  userid: 
+  created: 
+  modified: 
+  mailed: 1
+  subject: MyString
+  message: MyText
+  messageformat: 1
+  messagetrust: 1
+  attachment: MyString
+  totalscore: 1
+  mailnow: 
+
+two:
+  discussion: 
+  parent: 
+  userid: 
+  created: 
+  modified: 
+  mailed: 1
+  subject: MyString
+  message: MyText
+  messageformat: 1
+  messagetrust: 1
+  attachment: MyString
+  totalscore: 1
+  mailnow: 
