@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contextlevel: 
+  instanceid: 
+  path: MyString
+  depth: 1
+
+two:
+  contextlevel: 
+  instanceid: 
+  path: MyString
+  depth: 1

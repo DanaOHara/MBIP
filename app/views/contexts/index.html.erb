@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contexts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contextlevel</th>
+      <th>Instanceid</th>
+      <th>Path</th>
+      <th>Depth</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contexts.each do |context| %>
+      <tr>
+        <td><%= context.contextlevel %></td>
+        <td><%= context.instanceid %></td>
+        <td><%= context.path %></td>
+        <td><%= context.depth %></td>
+        <td><%= link_to 'Show', context %></td>
+        <td><%= link_to 'Edit', edit_context_path(context) %></td>
+        <td><%= link_to 'Destroy', context, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Context', new_context_path %>

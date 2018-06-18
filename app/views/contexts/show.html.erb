@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contextlevel:</strong>
+  <%= @context.contextlevel %>
+</p>
+
+<p>
+  <strong>Instanceid:</strong>
+  <%= @context.instanceid %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @context.path %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @context.depth %>
+</p>
+
+<%= link_to 'Edit', edit_context_path(@context) %> |
+<%= link_to 'Back', contexts_path %>
