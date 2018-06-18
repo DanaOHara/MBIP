@@ -1,0 +1,2 @@
+json.extract! forum, :id, :course, :type, :name, :intro, :introformat, :assessed, :assesstimestart, :assesstimefinish, :scale, :maxbytes, :maxattachments, :forcesubscribe, :trackingtype, :rsstype, :rssarticles, :timemodified, :warnafter, :blockafter, :blockperiod, :completiondiscussions, :completionreplies, :completionposts, :displaywordcount, :created_at, :updated_at
+json.url forum_url(forum, format: :json)

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :forums
   resources :resources
   resources :role_assignments
   resources :users

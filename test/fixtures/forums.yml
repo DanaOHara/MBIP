@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: 
+  type: 
+  name: MyString
+  intro: MyText
+  introformat: 1
+  assessed: 
+  assesstimestart: 
+  assesstimefinish: 
+  scale: 
+  maxbytes: 
+  maxattachments: 
+  forcesubscribe: false
+  trackingtype: 1
+  rsstype: 1
+  rssarticles: 1
+  timemodified: 
+  warnafter: 
+  blockafter: 
+  blockperiod: 
+  completiondiscussions: 1
+  completionreplies: 1
+  completionposts: 1
+  displaywordcount: false
+
+two:
+  course: 
+  type: 
+  name: MyString
+  intro: MyText
+  introformat: 1
+  assessed: 
+  assesstimestart: 
+  assesstimefinish: 
+  scale: 
+  maxbytes: 
+  maxattachments: 
+  forcesubscribe: false
+  trackingtype: 1
+  rsstype: 1
+  rssarticles: 1
+  timemodified: 
+  warnafter: 
+  blockafter: 
+  blockperiod: 
+  completiondiscussions: 1
+  completionreplies: 1
+  completionposts: 1
+  displaywordcount: false
