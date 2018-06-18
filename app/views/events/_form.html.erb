@@ -1,0 +1,102 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :format %>
+    <%= form.number_field :format %>
+  </div>
+
+  <div class="field">
+    <%= form.label :courseid %>
+    <%= form.text_field :courseid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groupid %>
+    <%= form.text_field :groupid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repeatid %>
+    <%= form.text_field :repeatid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modulename %>
+    <%= form.text_field :modulename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instance %>
+    <%= form.text_field :instance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eventtype %>
+    <%= form.text_field :eventtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timestart %>
+    <%= form.text_field :timestart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timeduration %>
+    <%= form.text_field :timeduration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visible %>
+    <%= form.number_field :visible %>
+  </div>
+
+  <div class="field">
+    <%= form.label :uuid %>
+    <%= form.text_field :uuid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sequence %>
+    <%= form.text_field :sequence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subscriptionid %>
+    <%= form.text_field :subscriptionid %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

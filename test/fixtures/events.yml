@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyText
+  format: 1
+  courseid: 
+  groupid: 
+  userid: 
+  repeatid: 
+  modulename: MyString
+  instance: 
+  eventtype: MyString
+  timestart: 
+  timeduration: 
+  visible: 1
+  uuid: MyString
+  sequence: 
+  timemodified: 
+  subscriptionid: 
+
+two:
+  name: MyText
+  description: MyText
+  format: 1
+  courseid: 
+  groupid: 
+  userid: 
+  repeatid: 
+  modulename: MyString
+  instance: 
+  eventtype: MyString
+  timestart: 
+  timeduration: 
+  visible: 1
+  uuid: MyString
+  sequence: 
+  timemodified: 
+  subscriptionid: 

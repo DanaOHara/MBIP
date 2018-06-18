@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Courseid</th>
+      <th>Groupid</th>
+      <th>Userid</th>
+      <th>Repeatid</th>
+      <th>Modulename</th>
+      <th>Instance</th>
+      <th>Eventtype</th>
+      <th>Timestart</th>
+      <th>Timeduration</th>
+      <th>Visible</th>
+      <th>Uuid</th>
+      <th>Sequence</th>
+      <th>Timemodified</th>
+      <th>Subscriptionid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.format %></td>
+        <td><%= event.courseid %></td>
+        <td><%= event.groupid %></td>
+        <td><%= event.userid %></td>
+        <td><%= event.repeatid %></td>
+        <td><%= event.modulename %></td>
+        <td><%= event.instance %></td>
+        <td><%= event.eventtype %></td>
+        <td><%= event.timestart %></td>
+        <td><%= event.timeduration %></td>
+        <td><%= event.visible %></td>
+        <td><%= event.uuid %></td>
+        <td><%= event.sequence %></td>
+        <td><%= event.timemodified %></td>
+        <td><%= event.subscriptionid %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>

@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @event.format %>
+</p>
+
+<p>
+  <strong>Courseid:</strong>
+  <%= @event.courseid %>
+</p>
+
+<p>
+  <strong>Groupid:</strong>
+  <%= @event.groupid %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @event.userid %>
+</p>
+
+<p>
+  <strong>Repeatid:</strong>
+  <%= @event.repeatid %>
+</p>
+
+<p>
+  <strong>Modulename:</strong>
+  <%= @event.modulename %>
+</p>
+
+<p>
+  <strong>Instance:</strong>
+  <%= @event.instance %>
+</p>
+
+<p>
+  <strong>Eventtype:</strong>
+  <%= @event.eventtype %>
+</p>
+
+<p>
+  <strong>Timestart:</strong>
+  <%= @event.timestart %>
+</p>
+
+<p>
+  <strong>Timeduration:</strong>
+  <%= @event.timeduration %>
+</p>
+
+<p>
+  <strong>Visible:</strong>
+  <%= @event.visible %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @event.uuid %>
+</p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @event.sequence %>
+</p>
+
+<p>
+  <strong>Timemodified:</strong>
+  <%= @event.timemodified %>
+</p>
+
+<p>
+  <strong>Subscriptionid:</strong>
+  <%= @event.subscriptionid %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
