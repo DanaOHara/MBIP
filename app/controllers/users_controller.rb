@@ -21,9 +21,32 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def vemail
+  def emailErroneo
 
   end
+
+
+  def vEmail
+
+  @user = User.select(:id).where("email = ?", params[:email])
+
+
+
+   if @user.nil? == true || @user.blank? == true
+
+   render :action =>"emailErroneo"
+
+  else
+  # Por ahora la verificacion de la contrasena quedara en suspenso, con un email valido ira a los cursos del alumno
+  # render :action =>"vcontrasena"
+  #@mdl_id = MdlUser.select(:id).where("email = ?", params[:email].concat("@usach.cl"))
+  render json: @user
+  #redirect_to  controller: 'mdl_contexts', action: 'course', :id => @mdl_user.pluck(:id)
+  #redirect_to url_for(:controller => 'mdl_contexts', :action => 'cursos')
+
+   #return @mdl_id
+   end
+end
 
   # POST /users
   # POST /users.json
