@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Sortorder</th>
+      <th>Fullname</th>
+      <th>Shortname</th>
+      <th>Idnumber</th>
+      <th>Summary</th>
+      <th>Summaryformat</th>
+      <th>Format</th>
+      <th>Showgrades</th>
+      <th>Newsitems</th>
+      <th>Startdate</th>
+      <th>Marker</th>
+      <th>Maxbytes</th>
+      <th>Legacyfiles</th>
+      <th>Showreports</th>
+      <th>Visible</th>
+      <th>Visibleold</th>
+      <th>Groupmode</th>
+      <th>Groupmodeforce</th>
+      <th>Defaultgroupingid</th>
+      <th>Lang</th>
+      <th>Calendartype</th>
+      <th>Theme</th>
+      <th>Timecreated</th>
+      <th>Timemodified</th>
+      <th>Requested</th>
+      <th>Enablecompletion</th>
+      <th>Completionnotify</th>
+      <th>Cacherev</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.category %></td>
+        <td><%= course.sortorder %></td>
+        <td><%= course.fullname %></td>
+        <td><%= course.shortname %></td>
+        <td><%= course.idnumber %></td>
+        <td><%= course.summary %></td>
+        <td><%= course.summaryformat %></td>
+        <td><%= course.format %></td>
+        <td><%= course.showgrades %></td>
+        <td><%= course.newsitems %></td>
+        <td><%= course.startdate %></td>
+        <td><%= course.marker %></td>
+        <td><%= course.maxbytes %></td>
+        <td><%= course.legacyfiles %></td>
+        <td><%= course.showreports %></td>
+        <td><%= course.visible %></td>
+        <td><%= course.visibleold %></td>
+        <td><%= course.groupmode %></td>
+        <td><%= course.groupmodeforce %></td>
+        <td><%= course.defaultgroupingid %></td>
+        <td><%= course.lang %></td>
+        <td><%= course.calendartype %></td>
+        <td><%= course.theme %></td>
+        <td><%= course.timecreated %></td>
+        <td><%= course.timemodified %></td>
+        <td><%= course.requested %></td>
+        <td><%= course.enablecompletion %></td>
+        <td><%= course.completionnotify %></td>
+        <td><%= course.cacherev %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>

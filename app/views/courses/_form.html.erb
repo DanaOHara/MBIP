@@ -1,0 +1,162 @@
+<%= form_with(model: course, local: true) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sortorder %>
+    <%= form.text_field :sortorder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fullname %>
+    <%= form.text_field :fullname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shortname %>
+    <%= form.text_field :shortname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idnumber %>
+    <%= form.text_field :idnumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summary %>
+    <%= form.text_area :summary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :summaryformat %>
+    <%= form.number_field :summaryformat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :format %>
+    <%= form.text_field :format %>
+  </div>
+
+  <div class="field">
+    <%= form.label :showgrades %>
+    <%= form.number_field :showgrades %>
+  </div>
+
+  <div class="field">
+    <%= form.label :newsitems %>
+    <%= form.number_field :newsitems %>
+  </div>
+
+  <div class="field">
+    <%= form.label :startdate %>
+    <%= form.text_field :startdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :marker %>
+    <%= form.text_field :marker %>
+  </div>
+
+  <div class="field">
+    <%= form.label :maxbytes %>
+    <%= form.text_field :maxbytes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :legacyfiles %>
+    <%= form.number_field :legacyfiles %>
+  </div>
+
+  <div class="field">
+    <%= form.label :showreports %>
+    <%= form.number_field :showreports %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visible %>
+    <%= form.check_box :visible %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visibleold %>
+    <%= form.check_box :visibleold %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groupmode %>
+    <%= form.number_field :groupmode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groupmodeforce %>
+    <%= form.number_field :groupmodeforce %>
+  </div>
+
+  <div class="field">
+    <%= form.label :defaultgroupingid %>
+    <%= form.text_field :defaultgroupingid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lang %>
+    <%= form.text_field :lang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :calendartype %>
+    <%= form.text_field :calendartype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :theme %>
+    <%= form.text_field :theme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timecreated %>
+    <%= form.text_field :timecreated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :requested %>
+    <%= form.check_box :requested %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enablecompletion %>
+    <%= form.check_box :enablecompletion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :completionnotify %>
+    <%= form.check_box :completionnotify %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cacherev %>
+    <%= form.text_field :cacherev %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: 
+  sortorder: 
+  fullname: MyString
+  shortname: MyString
+  idnumber: MyString
+  summary: MyText
+  summaryformat: 1
+  format: MyString
+  showgrades: 1
+  newsitems: 1
+  startdate: 
+  marker: 
+  maxbytes: 
+  legacyfiles: 1
+  showreports: 1
+  visible: false
+  visibleold: false
+  groupmode: 1
+  groupmodeforce: 1
+  defaultgroupingid: 
+  lang: MyString
+  calendartype: MyString
+  theme: MyString
+  timecreated: 
+  timemodified: 
+  requested: false
+  enablecompletion: false
+  completionnotify: false
+  cacherev: 
+
+two:
+  category: 
+  sortorder: 
+  fullname: MyString
+  shortname: MyString
+  idnumber: MyString
+  summary: MyText
+  summaryformat: 1
+  format: MyString
+  showgrades: 1
+  newsitems: 1
+  startdate: 
+  marker: 
+  maxbytes: 
+  legacyfiles: 1
+  showreports: 1
+  visible: false
+  visibleold: false
+  groupmode: 1
+  groupmodeforce: 1
+  defaultgroupingid: 
+  lang: MyString
+  calendartype: MyString
+  theme: MyString
+  timecreated: 
+  timemodified: 
+  requested: false
+  enablecompletion: false
+  completionnotify: false
+  cacherev: 
