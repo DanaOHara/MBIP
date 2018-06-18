@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: 
+  name: MyString
+  intro: MyText
+  introformat: 1
+  tobemigrated: 1
+  legacyfiles: 1
+  legacyfileslast: 
+  display: 1
+  displayoptions: MyText
+  filterfiles: 1
+  revision: 
+  timemodified: 
+
+two:
+  course: 
+  name: MyString
+  intro: MyText
+  introformat: 1
+  tobemigrated: 1
+  legacyfiles: 1
+  legacyfileslast: 
+  display: 1
+  displayoptions: MyText
+  filterfiles: 1
+  revision: 
+  timemodified: 

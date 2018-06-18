@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @resource.course %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resource.name %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @resource.intro %>
+</p>
+
+<p>
+  <strong>Introformat:</strong>
+  <%= @resource.introformat %>
+</p>
+
+<p>
+  <strong>Tobemigrated:</strong>
+  <%= @resource.tobemigrated %>
+</p>
+
+<p>
+  <strong>Legacyfiles:</strong>
+  <%= @resource.legacyfiles %>
+</p>
+
+<p>
+  <strong>Legacyfileslast:</strong>
+  <%= @resource.legacyfileslast %>
+</p>
+
+<p>
+  <strong>Display:</strong>
+  <%= @resource.display %>
+</p>
+
+<p>
+  <strong>Displayoptions:</strong>
+  <%= @resource.displayoptions %>
+</p>
+
+<p>
+  <strong>Filterfiles:</strong>
+  <%= @resource.filterfiles %>
+</p>
+
+<p>
+  <strong>Revision:</strong>
+  <%= @resource.revision %>
+</p>
+
+<p>
+  <strong>Timemodified:</strong>
+  <%= @resource.timemodified %>
+</p>
+
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %>
