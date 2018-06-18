@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Roleid:</strong>
+  <%= @role_assignment.roleid %>
+</p>
+
+<p>
+  <strong>Contextid:</strong>
+  <%= @role_assignment.contextid %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @role_assignment.userid %>
+</p>
+
+<p>
+  <strong>Timemodified:</strong>
+  <%= @role_assignment.timemodified %>
+</p>
+
+<p>
+  <strong>Modifierid:</strong>
+  <%= @role_assignment.modifierid %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @role_assignment.component %>
+</p>
+
+<p>
+  <strong>Itemid:</strong>
+  <%= @role_assignment.itemid %>
+</p>
+
+<p>
+  <strong>Sortorder:</strong>
+  <%= @role_assignment.sortorder %>
+</p>
+
+<%= link_to 'Edit', edit_role_assignment_path(@role_assignment) %> |
+<%= link_to 'Back', role_assignments_path %>

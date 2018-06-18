@@ -1,0 +1,57 @@
+<%= form_with(model: role_assignment, local: true) do |form| %>
+  <% if role_assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(role_assignment.errors.count, "error") %> prohibited this role_assignment from being saved:</h2>
+
+      <ul>
+      <% role_assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :roleid %>
+    <%= form.text_field :roleid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contextid %>
+    <%= form.text_field :contextid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modifierid %>
+    <%= form.text_field :modifierid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :component %>
+    <%= form.text_field :component %>
+  </div>
+
+  <div class="field">
+    <%= form.label :itemid %>
+    <%= form.text_field :itemid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sortorder %>
+    <%= form.text_field :sortorder %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

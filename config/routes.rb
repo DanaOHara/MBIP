@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :role_assignments
   resources :users
   root 'welcome#index'
   post 'users/vEmail', to: 'users#vEmail'
