@@ -1,0 +1,4 @@
+class ForumDiscussion < ApplicationRecord
+
+
+end

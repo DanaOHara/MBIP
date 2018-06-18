@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @forum_discussion.course %>
+</p>
+
+<p>
+  <strong>Forum:</strong>
+  <%= @forum_discussion.forum %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @forum_discussion.name %>
+</p>
+
+<p>
+  <strong>Firstpost:</strong>
+  <%= @forum_discussion.firstpost %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @forum_discussion.userid %>
+</p>
+
+<p>
+  <strong>Groupid:</strong>
+  <%= @forum_discussion.groupid %>
+</p>
+
+<p>
+  <strong>Assessed:</strong>
+  <%= @forum_discussion.assessed %>
+</p>
+
+<p>
+  <strong>Timemodified:</strong>
+  <%= @forum_discussion.timemodified %>
+</p>
+
+<p>
+  <strong>Usermodified:</strong>
+  <%= @forum_discussion.usermodified %>
+</p>
+
+<p>
+  <strong>Timestart:</strong>
+  <%= @forum_discussion.timestart %>
+</p>
+
+<p>
+  <strong>Timeend:</strong>
+  <%= @forum_discussion.timeend %>
+</p>
+
+<%= link_to 'Edit', edit_forum_discussion_path(@forum_discussion) %> |
+<%= link_to 'Back', forum_discussions_path %>

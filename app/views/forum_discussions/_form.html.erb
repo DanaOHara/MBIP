@@ -1,0 +1,72 @@
+<%= form_with(model: forum_discussion, local: true) do |form| %>
+  <% if forum_discussion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(forum_discussion.errors.count, "error") %> prohibited this forum_discussion from being saved:</h2>
+
+      <ul>
+      <% forum_discussion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :course %>
+    <%= form.text_field :course %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forum %>
+    <%= form.text_field :forum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstpost %>
+    <%= form.text_field :firstpost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :groupid %>
+    <%= form.text_field :groupid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :assessed %>
+    <%= form.check_box :assessed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usermodified %>
+    <%= form.text_field :usermodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timestart %>
+    <%= form.text_field :timestart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timeend %>
+    <%= form.text_field :timeend %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

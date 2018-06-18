@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: 
+  forum: 
+  name: MyString
+  firstpost: 
+  userid: 
+  groupid: 
+  assessed: false
+  timemodified: 
+  usermodified: 
+  timestart: 
+  timeend: 
+
+two:
+  course: 
+  forum: 
+  name: MyString
+  firstpost: 
+  userid: 
+  groupid: 
+  assessed: false
+  timemodified: 
+  usermodified: 
+  timestart: 
+  timeend: 
