@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post 'users/vEmail', to: 'users#vEmail'
   get 'users/emailErroneo', to: 'users#emailErroneo'
 
+  get 'contexts/course/:id', to: 'contexts#course'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

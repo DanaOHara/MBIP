@@ -21,6 +21,32 @@ class ContextsController < ApplicationController
   def edit
   end
 
+
+#####################################
+
+
+
+def course
+
+@context = Context.select(:fullname,'co.id').joins(" INNER JOIN role_assignments  ra ON  ra.contextid =  context.id INNER JOIN course co ON co.id = context.instanceid" ).where("ra.userid = ? ", params[:id])
+
+  if @context.nil? == true || @context.blank? == true
+
+       #render :action =>"buscar"
+
+  else
+
+
+    #render json: @mdl_context
+      render json: @context
+
+  end
+end
+
+
+
+  #################################
+
   # POST /contexts
   # POST /contexts.json
   def create
