@@ -20,7 +20,26 @@ class ForumsController < ApplicationController
   # GET /forums/1/edit
   def edit
   end
+#############################################################
 
+
+  def forosPorCurso
+
+    @forums = Forum.select(:id,:course,:name).where("course = ?", params[:course])
+
+    if @forums.nil? == true || @forums.blank? == true
+
+    #  render :action =>"sinForos"
+
+    else
+
+  #  return  @mdl_forums
+    render json: @forums
+
+    end
+end
+
+#############################################################
   # POST /forums
   # POST /forums.json
   def create
