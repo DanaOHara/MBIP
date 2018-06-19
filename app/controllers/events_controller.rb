@@ -21,6 +21,29 @@ class EventsController < ApplicationController
   def edit
   end
 
+  ##########################################################
+
+  def eventosPorCurso
+
+    @events = Event.select(:id, :name, :courseid).where("courseid = ?", params[:courseid])
+
+    if @events.nil? == true || @events.blank? == true
+
+         #render :action =>"sinEventos"
+
+    else
+
+    #return @events
+
+    render json: @events
+
+    end
+end
+
+  ##########################################################
+
+
+
   # POST /events
   # POST /events.json
   def create
