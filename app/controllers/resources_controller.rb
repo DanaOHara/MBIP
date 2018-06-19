@@ -20,7 +20,24 @@ class ResourcesController < ApplicationController
   # GET /resources/1/edit
   def edit
   end
+##########################################################
 
+def recursosPorCurso
+
+  @resources = Resource.select(:name,:course).where("course = ?", params[:course])
+
+  if @resources.nil? == true || @resources.blank? == true
+
+       #redirect_to :action =>"sinRecursos", :course => params[:course]
+
+  else
+
+  #return @mdl_resources
+  render json: @resources
+  end
+
+end
+##########################################################
   # POST /resources
   # POST /resources.json
   def create
