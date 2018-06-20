@@ -1,0 +1,25 @@
+<%= form_tag(controller: "events", action: "sinEventos", method: "get") do |f| %>
+
+<title>Ingreso</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrapo/3.3.7/js/bootstrap.min.js"></script>
+
+<div id="panelLogin" class="container-fluid">
+
+  <div id="panelLoginInterior" class="panel panel-default">
+
+    <div class="panel-body">
+
+
+               <div class="col-lg-12"><h1>Lo sentimos no hay eventos  en este curso </h1></div>
+               <%= link_to("Volver al foro", :back)%>
+
+
+
+    </div>
+  </div>
+</div>
+<% end %>

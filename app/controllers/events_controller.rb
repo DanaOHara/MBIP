@@ -25,20 +25,27 @@ class EventsController < ApplicationController
 
   def eventosPorCurso
 
-    @events = Event.select(:id, :name, :courseid).where("courseid = ?", params[:courseid])
+      @events = Event.select(:id, :name, :courseid).where("courseid = ?", params[:courseid])
 
-    if @events.nil? == true || @events.blank? == true
+      if @events.nil? == true || @events.blank? == true
 
-         #render :action =>"sinEventos"
+      render :action =>"sinEventos"
 
-    else
+      else
 
     #return @events
 
-    render json: @events
+      render json: @events
+
+      end
+    end
+
+    def sinEventos
+
+      render :action =>"sinEventos"
 
     end
-end
+
 
   ##########################################################
 

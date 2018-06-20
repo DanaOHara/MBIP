@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post 'users/vEmail', to: 'users#vEmail'
-  
+
   get 'users/emailErroneo', to: 'users#emailErroneo'
 
   get 'contexts/course/:id', to: 'contexts#course'
@@ -31,7 +31,8 @@ Rails.application.routes.draw do
 
   get 'forum_posts/sinPosts', to: 'forum_posts#sinPosts'
 
-   get 'forum_discussions/sinDiscusiones', to: 'forum_discussions#sinDiscusiones'
+  get 'forum_discussions/sinDiscusiones', to: 'forum_discussions#sinDiscusiones'
 
+  get 'events/sinEventos', to: 'events#sinEventos'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
