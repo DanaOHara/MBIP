@@ -35,7 +35,7 @@ class ForumPostsController < ApplicationController
 
     def postRespuestas
 
-      @forum_posts = MdlForumPost.select(:message).where('discussion = ? ', params[:discussion]).where('parent != 0')
+      @forum_posts = ForumPost.select(:message).where('discussion = ? ', params[:discussion]).where('parent != 0')
 
         if @forum_posts.nil? == true || @forum_posts.blank? == true
 
@@ -43,7 +43,7 @@ class ForumPostsController < ApplicationController
 
         else
 
-          #return 
+          #return
           render json: @forum_posts
 
       end
