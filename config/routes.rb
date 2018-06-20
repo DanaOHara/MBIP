@@ -34,5 +34,7 @@ Rails.application.routes.draw do
   get 'forum_discussions/sinDiscusiones', to: 'forum_discussions#sinDiscusiones'
 
   get 'events/sinEventos', to: 'events#sinEventos'
+
+  get 'resources/sinRecursos/:course', to: 'resources#sinRecursos'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -28,7 +28,7 @@ def recursosPorCurso
 
   if @resources.nil? == true || @resources.blank? == true
 
-       #redirect_to :action =>"sinRecursos", :course => params[:course]
+  redirect_to :action =>"sinRecursos", :course => params[:course]
 
   else
 
@@ -37,6 +37,12 @@ def recursosPorCurso
   end
 
 end
+
+def sinRecursos
+
+
+end
+
 ##########################################################
   # POST /resources
   # POST /resources.json
