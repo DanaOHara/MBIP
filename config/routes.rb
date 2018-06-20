@@ -22,5 +22,7 @@ Rails.application.routes.draw do
 
   get 'forum_discussions/discusionesPorForo/:forum', to: 'forum_discussions#discusionesPorForo'
 
+  get 'forum_posts/postPorDiscusionPrincipal/:discussion', to: 'forum_posts#postPorDiscusionPrincipal'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

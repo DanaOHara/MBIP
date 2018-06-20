@@ -21,6 +21,37 @@ class ForumPostsController < ApplicationController
   def edit
   end
 
+
+  ##############################################
+
+  def postPorDiscusionPrincipal
+
+      @forum_posts = ForumPost.select(:message, :subject, :discussion).where('discussion = ? ', params[:discussion]).where(parent: 0)
+      render json: @forum_posts
+      #return  @forum_posts
+
+    end
+
+
+    def postRespuestas
+
+      @forum_posts = MdlForumPost.select(:message).where('discussion = ? ', params[:discussion]).where('parent != 0')
+
+        if @forum_posts.nil? == true || @forum_posts.blank? == true
+
+          #render :action =>"sinPosts"
+
+        else
+
+          #return 
+          render json: @forum_posts
+
+      end
+    end
+
+
+  ##############################################
+
   # POST /forum_posts
   # POST /forum_posts.json
   def create
