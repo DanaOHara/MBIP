@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   get 'forums/forosPorCurso/:course', to: 'forums#forosPorCurso'
 
+  get 'forum_discussions/discusionesPorForo/:forum', to: 'forum_discussions#discusionesPorForo'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

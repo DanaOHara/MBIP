@@ -21,6 +21,27 @@ class ForumDiscussionsController < ApplicationController
   def edit
   end
 
+  ####################################################
+
+  def discusionesPorForo
+
+  @forum_discussions = ForumDiscussion.select(:id,:name,:course).where("forum = ?", params[:forum])
+
+  if @forum_discussions.nil? == true || @forum_discussions.blank? == true
+
+    #render :action =>"sinDiscusiones"
+
+  else
+
+    #return  @mdl_forum_discussions
+    return render json: @forum_discussions
+
+    end
+
+  end
+
+  ####################################################
+
   # POST /forum_discussions
   # POST /forum_discussions.json
   def create
