@@ -29,7 +29,7 @@ class ForumDiscussionsController < ApplicationController
 
   if @forum_discussions.nil? == true || @forum_discussions.blank? == true
 
-    #render :action =>"sinDiscusiones"
+    render :action =>"sinDiscusiones"
 
   else
 
@@ -39,6 +39,14 @@ class ForumDiscussionsController < ApplicationController
     end
 
   end
+
+
+  def sinDiscusiones
+
+  redirect_to :action =>"sinDiscusiones"
+
+  end
+
 
   ####################################################
 

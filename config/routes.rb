@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   resources :resources
   resources :role_assignments
   resources :users
+
   root 'welcome#index'
+
   post 'users/vEmail', to: 'users#vEmail'
+  
   get 'users/emailErroneo', to: 'users#emailErroneo'
 
   get 'contexts/course/:id', to: 'contexts#course'
@@ -27,6 +30,8 @@ Rails.application.routes.draw do
   get 'forum_posts/postRespuestas/:discussion', to: 'forum_posts#postRespuestas'
 
   get 'forum_posts/sinPosts', to: 'forum_posts#sinPosts'
+
+   get 'forum_discussions/sinDiscusiones', to: 'forum_discussions#sinDiscusiones'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
