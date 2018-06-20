@@ -39,7 +39,7 @@ class ForumPostsController < ApplicationController
 
         if @forum_posts.nil? == true || @forum_posts.blank? == true
 
-          #render :action =>"sinPosts"
+          render :action =>"sinPosts"
 
         else
 
@@ -48,6 +48,14 @@ class ForumPostsController < ApplicationController
 
       end
     end
+
+
+    def sinPosts
+
+   redirect_to :action =>"sinPosts"
+
+    end
+
 
 
   ##############################################
