@@ -1,0 +1,45 @@
+<%= form_for :forum_discussions, :url => { :action => :discusionesPorForo } do |f| %>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+
+ <li><%= link_to "Volver a foros", controller: "forums", action: "forosPorCurso", course:  @forum_discussions.pluck(:course)%></li>
+
+</ul>
+</div>
+</nav>
+
+
+
+
+<div class="row">
+  <div class="col-md-12 "><h2>Discusiones</h2></div>
+</div>
+
+<% @forum_discussions.each do |forum_discussions| %>
+
+<div class="row">
+<div class="col-md-12 courseButton"><%= link_to forum_discussions.name, controller: "forum_posts", action: "postPorDiscusionPrincipal", discussion: forum_discussions.id%></div>
+</div>
+<% end %>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#"></a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Mis Cursos</a></li>
+     <li><a href="#">Buscar Cursos</a></li>
+     <li><a href="#">Mi Usuario</a></li>
+     <li><a href="#">Mis Mensajes</a></li>
+   </ul>
+ </div>
+</nav>
+
+
+
+<% end %>
