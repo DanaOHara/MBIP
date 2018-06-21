@@ -1,0 +1,43 @@
+<%= form_for :events, :url => { :action => :eventosPorCurso } do |f| %>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+  <li><%= link_to "Ir a material", controller: "resources", action: "recursosPorCurso", course: @events.pluck(:courseid)%></li>
+  <li><%= link_to "Ir a foros", controller: "forums", action: "forosPorCurso", course: @events.pluck(:courseid)%></li>
+</ul>
+</div>
+</nav>
+
+
+
+
+<div class="row">
+  <div class="col-md-12 "><h2>Eventos</h2></div>
+</div>
+
+<% @events.each do |events| %>
+
+<div class="row">
+<div class="col-md-12 courseButton"><%= events.name %></div>
+</div>
+<% end %>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#"></a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Mis Cursos</a></li>
+     <li><a href="#">Buscar Cursos</a></li>
+     <li><a href="#">Mi Usuario</a></li>
+     <li><a href="#">Mis Mensajes</a></li>
+   </ul>
+ </div>
+</nav>
+
+
+
+<% end %>

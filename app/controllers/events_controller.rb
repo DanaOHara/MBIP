@@ -33,9 +33,9 @@ class EventsController < ApplicationController
 
       else
 
-    #return @events
+    return @events
 
-      render json: @events
+    #  render json: @events
 
       end
     end
