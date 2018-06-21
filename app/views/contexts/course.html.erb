@@ -1,0 +1,27 @@
+<%= form_for :contexts, :url => { :action => :course } do |f| %>
+
+<div class="row">
+  <div class="col-md-12 courseTitle"><h1>Mis Cursos</h1></div>
+</div>
+<% @context.each do |context| %>
+
+<div class="row">
+<%= link_to context.fullname, controller: "resources", action: "recursosPorCurso", course: context.id, class: 'btn btn-primary btn-lg  btn-block'%>
+</div>
+<% end %>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#"></a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Mis Cursos</a></li>
+     <li><a href="#">Buscar Cursos</a></li>
+     <li><a href="#">Mi Usuario</a></li>
+     <li><a href="#">Mis Mensajes</a></li>
+   </ul>
+ </div>
+</nav>
+
+<% end %>
