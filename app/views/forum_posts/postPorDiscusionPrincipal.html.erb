@@ -15,14 +15,14 @@
 
 
 <div class="row">
-  <div class="col-md-12 "><h2><%=@forum_posts.pluck(:subject)%></h2></div>
+  <div class="col-md-12 "><%= @forum_posts.pluck(:subject)%></div>
 </div>
 
 <% @forum_posts.each do |forum_posts| %>
 
 <div class="row">
 
-<div class="col-md-12 courseButton"><%= forum_posts.message%></div>
+<div class="col-md-12 courseButton"><%= raw forum_posts.message%></div>
 </div>
 <% end %>
 
