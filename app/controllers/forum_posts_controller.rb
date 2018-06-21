@@ -35,7 +35,7 @@ class ForumPostsController < ApplicationController
 
     def postRespuestas
 
-      @forum_posts = ForumPost.select(:message, :subject).where('discussion = ? ', params[:discussion]).where('parent != 0')
+      @forum_posts = ForumPost.where('discussion = ? ', params[:discussion]).where('parent != 0')
 
         if @forum_posts.nil? == true || @forum_posts.blank? == true
 

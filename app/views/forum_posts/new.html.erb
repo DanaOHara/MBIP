@@ -1,5 +1,29 @@
-<h1>New Forum Post</h1>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+ <li> <%= link_to("Volver", :back)%></li>
+
+</ul>
+</div>
+</nav>
+
+<div class="row">
+
+</div>
 
 <%= render 'form', forum_post: @forum_post %>
 
-<%= link_to 'Back', forum_posts_path %>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#"></a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Mis Cursos</a></li>
+     <li><a href="#">Buscar Cursos</a></li>
+     <li><a href="#">Mi Usuario</a></li>
+     <li><a href="#">Mis Mensajes</a></li>
+   </ul>
+ </div>
+</nav>
