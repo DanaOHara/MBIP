@@ -27,8 +27,8 @@ class ForumPostsController < ApplicationController
   def postPorDiscusionPrincipal
 
       @forum_posts = ForumPost.select(:message, :subject, :discussion).where('discussion = ? ', params[:discussion]).where(parent: 0)
-      render json: @forum_posts
-      #return  @forum_posts
+      #render json: @forum_posts
+      return  @forum_posts
 
     end
 

@@ -1,0 +1,48 @@
+
+<%= form_for :forum_posts, :url => { :action => :postPorDiscusionPrincipal } do |f| %>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+ <li> <%= link_to("Volver a discusiones del foro", :back)%></li>
+
+</ul>
+</div>
+</nav>
+
+
+
+
+<div class="row">
+  <div class="col-md-12 "><h2><%=@forum_posts.pluck(:subject)%></h2></div>
+</div>
+
+<% @forum_posts.each do |forum_posts| %>
+
+<div class="row">
+
+<div class="col-md-12 courseButton"><%= forum_posts.message%></div>
+</div>
+<% end %>
+
+ <%= link_to "Ver todos los mensajes del foro", controller: "forum_posts", action: "postRespuestas", discussion:  @forum_posts.pluck(:discussion)%>
+<%= link_to "Nuevo"%>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#"></a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Mis Cursos</a></li>
+     <li><a href="#">Buscar Cursos</a></li>
+     <li><a href="#">Mi Usuario</a></li>
+     <li><a href="#">Mis Mensajes</a></li>
+   </ul>
+ </div>
+</nav>
+
+
+
+<% end %>
