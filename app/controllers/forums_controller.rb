@@ -33,8 +33,8 @@ class ForumsController < ApplicationController
 
     else
 
-  #  return  @mdl_forums
-    render json: @forums
+    return  @forums
+  #  render json: @forums
 
     end
 end
