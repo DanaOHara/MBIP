@@ -20,6 +20,13 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
   end
+##############################################
+def buscar
+  @course = Course.select(:fullname).where("fullname = ?",params[:fullname])
+  #render json: @course
+  return  @course
+end
+##############################################
 
   # POST /courses
   # POST /courses.json

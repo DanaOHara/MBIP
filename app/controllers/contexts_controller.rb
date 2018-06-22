@@ -49,7 +49,6 @@ def sinCursos
 
 end
 
-
   #################################
 
   # POST /contexts
