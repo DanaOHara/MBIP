@@ -32,8 +32,8 @@ def recursosPorCurso
 
   else
 
-  #return @mdl_resources
-  render json: @resources
+  return @mdl_resources
+  #render json: @resources
   end
 
 end
