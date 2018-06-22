@@ -1,7 +1,10 @@
 <%= form_tag(controller: "forum_discussions", action: "sinDiscusiones", method: "get") do |f| %>
 
 
+<%= stylesheet_link_tag "baseMensajes" %>
 <div class="container-fluid">
+<div class = "Estilo">
+
 
   <div  class="card">
 
@@ -22,6 +25,6 @@
            </div>
          </div>
 
-
+</div>
 
 <% end %>
