@@ -36,5 +36,7 @@ Rails.application.routes.draw do
   get 'events/sinEventos', to: 'events#sinEventos'
 
   get 'resources/sinRecursos/:course', to: 'resources#sinRecursos'
+
+  get 'contexts/sinCursos', to: 'contexts#sinCursos'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

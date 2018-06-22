@@ -32,7 +32,7 @@ def course
 
   if @context.nil? == true || @context.blank? == true
 
-       #render :action =>"buscar"
+       render :action =>"sinCursos"
 
   else
 
@@ -43,6 +43,11 @@ def course
   end
 end
 
+def sinCursos
+
+   render :action =>"sinCursos"
+
+end
 
 
   #################################
