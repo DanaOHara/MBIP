@@ -37,8 +37,8 @@ Rails.application.routes.draw do
 
   get 'resources/sinRecursos/:course', to: 'resources#sinRecursos'
 
-  get 'contexts/sinCursos', to: 'contexts#sinCursos'
+  get 'contexts/sinCursos/:id', to: 'contexts#sinCursos'
 
-  get 'courses/buscar/:fullname', to: 'courses#buscar'
+  get 'courses/buscar/:id', to: 'courses#buscar'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -32,7 +32,7 @@ def course
 
   if @context.nil? == true || @context.blank? == true
 
-       render :action =>"sinCursos"
+       redirect_to :action => "sinCursos", :id=> params[:id]
 
   else
 
@@ -45,7 +45,7 @@ end
 
 def sinCursos
 
-   render :action =>"sinCursos"
+
 
 end
 

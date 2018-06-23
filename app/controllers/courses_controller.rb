@@ -22,9 +22,8 @@ class CoursesController < ApplicationController
   end
 ##############################################
 def buscar
-  @course = Course.select(:fullname).where("fullname = ?",params[:fullname])
-  #render json: @course
-  return  @course
+
+
 end
 ##############################################
 
