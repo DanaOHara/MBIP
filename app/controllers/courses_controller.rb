@@ -29,7 +29,9 @@ end
 
 def cursos
 
-@course = Course.select(:fullname).where("fullname = ?", params[:fullname])
+@search = params[:fullname]
+
+@course = Course.select(:fullname).where("fullname like ?", "%#{@search}%")
 
 if @course.nil? == true || @course.blank? == true
 
