@@ -43,6 +43,6 @@ Rails.application.routes.draw do
 
   post 'courses/cursos', to: 'courses#cursos'
 
-  get 'courses/sinCursos/:id', to: 'courses#sinCursos'
+  get 'courses/sinCursos/', to: 'courses#sinCursos'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

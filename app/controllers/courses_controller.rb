@@ -29,10 +29,21 @@ end
 
 def cursos
 
-@course = params[:fullname]
-render json:  @course
+@course = Course.select(:fullname).where("fullname = ?", params[:fullname])
+
+if @course.nil? == true || @course.blank? == true
+
+render :action =>"sinCursos"
+
+else
+
+#return @events
+
+  render json: @course
 
 end
+end
+
 
 def sinCursos
 
