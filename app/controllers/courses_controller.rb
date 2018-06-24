@@ -23,15 +23,20 @@ class CoursesController < ApplicationController
 ##############################################
 def buscar
 
+
+
 end
 
 def cursos
 
-
+@course = params[:fullname]
+render json:  @course
 
 end
 
 def sinCursos
+
+
 
 end
 

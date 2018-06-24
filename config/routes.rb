@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   get 'courses/buscar/:id', to: 'courses#buscar'
 
-  get 'courses/cursos/:id/:nombre', to: 'courses#cursos'
+  post 'courses/cursos', to: 'courses#cursos'
 
   get 'courses/sinCursos/:id', to: 'courses#sinCursos'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
