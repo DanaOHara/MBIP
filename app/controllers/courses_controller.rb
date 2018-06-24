@@ -23,6 +23,9 @@ class CoursesController < ApplicationController
 ##############################################
 def buscar
 
+end
+
+def cursos
 
 end
 ##############################################
