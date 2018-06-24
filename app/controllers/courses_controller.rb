@@ -27,7 +27,14 @@ end
 
 def cursos
 
+
+
 end
+
+def sinCursos
+
+end
+
 ##############################################
 
   # POST /courses
