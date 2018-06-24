@@ -31,7 +31,7 @@ def cursos
 
 @search = params[:fullname]
 
-@course = Course.select(:fullname).where("fullname like ?", "%#{@search}%")
+@course = Course.select( :id,:fullname).where("fullname like ?", "%#{@search}%")
 
 if @course.nil? == true || @course.blank? == true
 
@@ -39,9 +39,9 @@ render :action =>"sinCursos"
 
 else
 
-#return @events
+return @course
 
-  render json: @course
+  #render json: @course
 
 end
 end
