@@ -16,9 +16,9 @@
         <div class="list-group-item">
 
 
-               <div class="col-lg-12"><h1>Por el momento no tienes cursos disponibles en la plataforma </h1></div>
+               <div class="col-lg-12"><h1>Por el momento no tienes cursos disponibles en la plataforma ¿Quieres buscar algunos? </h1></div>
 
-               <div class='btn btn-primary btn-lg btn-block'><%= link_to 'Buscar cursos', controller: 'courses', action: 'buscar', id: params[:id] %></div>
+             <%= link_to 'Buscar cursos',{ controller: 'courses', action: 'buscar', id: params[:id]}, :class => "btn btn-primary btn-lg btn-block" %>
 
          </div>
         </div>
