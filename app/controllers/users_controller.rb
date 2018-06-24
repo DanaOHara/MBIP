@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
-
+#####################################################################
   def emailErroneo
 
   end
@@ -40,15 +40,24 @@ class UsersController < ApplicationController
 
    else
    # Por ahora la verificacion de la contrasena quedara en suspenso, con un email valido ira a los cursos del alumno
-   # render :action =>"vcontrasena"
+    render :action =>"vContrasena"
    #@mdl_id = MdlUser.select(:id).where("email = ?", params[:email].concat("@usach.cl"))
-   render json: @user
-   #redirect_to  controller: 'mdl_contexts', action: 'course', :id => @mdl_user.pluck(:id)
+   #render json: @user
+   #redirect_to  controller: 'users', action: 'vContrasena', :id => @user.pluck(:id)
    #redirect_to url_for(:controller => 'mdl_contexts', :action => 'cursos')
 
     #return @mdl_id
   end
 end
+
+
+def vContrasena
+
+end
+
+
+##################################################################
+
   # POST /users
   # POST /users.json
   def create

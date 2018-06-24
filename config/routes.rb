@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'users/vEmail/:id', to: 'users#vEmail'
 
+  post 'users/vContrasena', to: 'users#vContrasena'
+
   post 'users/email', to: 'users#email'
 
   get 'users/emailErroneo', to: 'users#emailErroneo'

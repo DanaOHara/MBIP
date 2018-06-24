@@ -1,0 +1,30 @@
+<%= form_tag(controller: "users", action: "email", method: "post") do |f| %>
+
+
+<%= stylesheet_link_tag "baseMensajes" %>
+<div class="container-fluid">
+<div class = "Estilo">
+
+
+    <div  class="card">
+
+
+      <div class="card-header"><h1>Bienvendo</h1></div>
+
+
+      <div class="list-group list-group-flush">
+
+        <div class="list-group-item">
+
+
+                <div class="col-lg-12"><h1><%= label_tag("Ingresa tu contraseña del correo Usach") %> </h1></div>
+                 <%=text_field_tag :contrasena,nil, class: "entrada" %>
+               <h1></h1>
+                <%= submit_tag "Ingresar", :class => "btn btn-primary btn-lg btn-block" %>
+
+         </div>
+        </div>
+        </div>
+      </div>
+</div>
+ <% end %>
