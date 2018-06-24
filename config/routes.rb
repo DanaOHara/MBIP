@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  post 'users/vEmail', to: 'users#vEmail'
+  get 'users/vEmail/:id', to: 'users#vEmail'
+
+  post 'users/email', to: 'users#email'
 
   get 'users/emailErroneo', to: 'users#emailErroneo'
 
