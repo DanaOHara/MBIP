@@ -21,11 +21,10 @@
 
 <% @forums.each do |forums| %>
 
-<div class="row">
+<div class="row area">
 
-  <%= link_to forums.name, {controller: "forum_discussions", action: "discusionesPorForo", forum: forums.id} do %>
-    <div class="col-lg-12 area"> <%= forums.name %></div>
-  <% end %>
+  <%= link_to forums.name, {controller: "forum_discussions", action: "discusionesPorForo", forum: forums.id}, class: "area" %>
+
 
 </div>
 
