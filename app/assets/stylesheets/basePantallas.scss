@@ -1,0 +1,37 @@
+.titulo
+{
+      text-align: center;
+      margin-top: 3%;
+      font-size: 250%;
+
+}
+
+.contenido
+{
+  text-align: left !important;
+
+  font-size: 250% !important;
+}
+
+.boton {
+    background-color: gray; /* Green */
+    border: 80 px;
+    color: black;
+    padding: 15px 32px;
+    display: inline-block;
+
+}
+
+.area{
+  background-color: #D3D3D3;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+a
+{
+  color: black;
+  display:block;
+  min-width: 100%;
+}
