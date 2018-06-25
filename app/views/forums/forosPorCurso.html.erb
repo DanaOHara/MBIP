@@ -12,16 +12,23 @@
 
 
 
-
+<%= stylesheet_link_tag "basePantallas" %>
+<div class="contenido container-fluid">
 <div class="row">
-  <div class="col-md-12 "><h2>Foros</h2></div>
+  <div class="col-md-12 titulo"><h1>Foros</h1></div>
 </div>
+
 
 <% @forums.each do |forums| %>
 
 <div class="row">
-<div class="col-md-12 courseButton"><%= link_to forums.name, controller: "forum_discussions", action: "discusionesPorForo", forum: forums.id%></div>
+
+  <%= link_to forums.name, {controller: "forum_discussions", action: "discusionesPorForo", forum: forums.id} do %>
+    <div class="col-lg-12 area"> <%= forums.name %></div>
+  <% end %>
+
 </div>
+
 <% end %>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
