@@ -23,7 +23,7 @@
 <% @events.each do |events| %>
 
 <div class="row area">
-<div class="col-lg-12 area"> <%= events.name %></div>
+<div class="col-lg-12 area"> <%= link_to events.name, controller: "events", action: "eventosDetalle", eventid: events.name, courseid: params[:courseid] %></div>
 </div>
 <% end %>
 

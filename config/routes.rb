@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 'events/eventosPorCurso/:courseid', to: 'events#eventosPorCurso'
 
+  get 'events/eventosDetalle/:eventid/:courseid', to: 'events#eventosDetalle'
+
   get 'forums/forosPorCurso/:course', to: 'forums#forosPorCurso'
 
   get 'forum_discussions/discusionesPorForo/:forum', to: 'forum_discussions#discusionesPorForo'

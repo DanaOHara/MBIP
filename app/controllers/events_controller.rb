@@ -46,6 +46,10 @@ class EventsController < ApplicationController
 
     end
 
+    def eventosDetalle
+
+    end
+
 
   ##########################################################
 
