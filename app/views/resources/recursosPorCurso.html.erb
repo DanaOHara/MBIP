@@ -2,6 +2,16 @@
 
 
 <%= stylesheet_link_tag "basePantallas" %>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+  <li><%= link_to "Volver a mis cursos", :back%></li>
+ <li><%= link_to "Ir a eventos", controller: "events", action: "eventosPorCurso", courseid:  params[:course]%></li>
+</ul>
+</div>
+</nav>
+
 <div class="contenido container-fluid">
 <div class="row">
   <div class="col-md-12 titulo"><h1>Materiales</h1></div>
