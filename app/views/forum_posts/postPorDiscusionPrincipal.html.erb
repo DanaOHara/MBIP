@@ -15,7 +15,7 @@
 <%= stylesheet_link_tag "basePantallas" %>
 <div class="contenido container-fluid">
 <div class="row">
-  <div class="col-md-12 titulo"><h1> <%= @forum_posts.pluck(:subject) %></h1></div>
+  <div class="col-md-12 titulo"><h1> <%= @forum_posts.pluck(:subject)[0] %></h1></div>
 </div>
 
 

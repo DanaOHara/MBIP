@@ -24,7 +24,7 @@ class ResourcesController < ApplicationController
 
 def recursosPorCurso
 
-  @resources = Resource.select(:name,:course).where("course = ?", params[:course])
+  @resources = Resource.select(:name,:course, :id).where("course = ?", params[:course])
 
   if @resources.nil? == true || @resources.blank? == true
 
@@ -42,6 +42,10 @@ def sinRecursos
 
 
 end
+
+def descarga
+end
+
 
 ##########################################################
   # POST /resources

@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'resources/recursosPorCurso/:course', to: 'resources#recursosPorCurso'
 
+  get 'resources/descarga/:course/:id', to: 'resources#descarga'
+
   get 'events/eventosPorCurso/:courseid', to: 'events#eventosPorCurso'
 
   get 'forums/forosPorCurso/:course', to: 'forums#forosPorCurso'

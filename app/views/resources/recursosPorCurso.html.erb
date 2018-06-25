@@ -19,8 +19,7 @@
 <% @resources.each do |resources| %>
 <div class="row area">
 
-
-    <div class="col-lg-12"> <%= resources.name %></div>
+ <%= link_to resources.name, {controller: "resources", action: "descarga", course: resources.course, id: resources.id}, class: "area" %>
 
 
 </div>
