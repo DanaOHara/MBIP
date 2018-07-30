@@ -5,7 +5,7 @@
 </div>
 <% @course.each do |course| %>
 
-<div class="row">
+<div class= "footer navbar ">
 <%= link_to course.fullname, controller: "resources", action: "recursosPorCurso", course: course.id, class: 'btn btn-primary btn-lg  btn-block'%>
 </div>
 <% end %>
