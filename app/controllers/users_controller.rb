@@ -30,7 +30,9 @@ class UsersController < ApplicationController
   end
 
  def email
-   @user = User.select(:id).where("email = ?", params[:email])
+
+   @mail = "@usach.cl"
+   @user = User.select(:id).where("email = ?", params[:email] + @mail)
 
 
 
