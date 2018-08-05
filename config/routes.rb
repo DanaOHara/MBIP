@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   get 'forum_discussions/sinDiscusiones', to: 'forum_discussions#sinDiscusiones'
 
-  get 'events/sinEventos', to: 'events#sinEventos'
+  get 'events/sinEventos/:courseid', to: 'events#sinEventos'
 
   get 'resources/sinRecursos/:course', to: 'resources#sinRecursos'
 

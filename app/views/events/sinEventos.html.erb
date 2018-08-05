@@ -16,6 +16,9 @@
 
 
              <div class="col-lg-12"><h1>En este momento no hay eventos disponibles para este curso </h1></div>
+
+                 <%= link_to("Ir a foros", {controller: 'forums', action: 'forosPorCurso', course: params[:courseid] } , class: 'btn btn-primary btn-lg  btn-block')%>
+                 <h1> </h1>
                  <%= link_to("Volver a mis cursos", :back, class: 'btn btn-primary btn-lg  btn-block')%>
 
        </div>

@@ -29,7 +29,7 @@ class EventsController < ApplicationController
 
       if @events.nil? == true || @events.blank? == true
 
-      render :action =>"sinEventos"
+      redirect_to :action =>"sinEventos", :courseid => params[:courseid]
 
       else
 
