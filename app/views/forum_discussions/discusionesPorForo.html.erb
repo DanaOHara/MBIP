@@ -1,21 +1,12 @@
 <%= form_for :forum_discussions, :url => { :action => :discusionesPorForo } do |f| %>
 
+<%= stylesheet_link_tag "basePantallas" %>
 
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
- <div class="container-fluid">
-   <ul class="nav navbar-nav">
-
- <li><%= link_to "Volver a foros", controller: "forums", action: "forosPorCurso", course:  @forum_discussions.pluck(:course)%></li>
-
-</ul>
-</div>
+<nav class="header navbar">
+  <li class="nav-item col-lg-6"><%= link_to "Volver a foros", controller: "forums", action: "forosPorCurso", course:  @forum_discussions.pluck(:course)%></li>
 </nav>
 
 
-
-
-<%= stylesheet_link_tag "basePantallas" %>
 <div class="contenido container-fluid">
 <div class="row">
   <div class="col-md-12 titulo"><h1>Discusiones</h1></div>
@@ -24,27 +15,17 @@
 <% @forum_discussions.each do |forum_discussions| %>
 
 <div class="row area">
-
   <%= link_to forum_discussions.name,{controller: "forum_posts", action: "postPorDiscusionPrincipal", discussion: forum_discussions.id}, class: "area"  %>
-
-
+</div>
+<% end %>
 
 </div>
 
-<% end %>
+<nav class= "footer navbar" >
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
- <div class="container-fluid">
-   <div class="navbar-header">
-     <a class="navbar-brand" href="#"></a>
-   </div>
-   <ul class="nav navbar-nav">
-     <li class="active"><a href="#">Mis Cursos</a></li>
-     <li><a href="#">Buscar Cursos</a></li>
-     <li><a href="#">Mi Usuario</a></li>
-     <li><a href="#">Mis Mensajes</a></li>
-   </ul>
- </div>
+     <li class="nav-item col-lg-6">Mis Cursos</li>
+     <li class="nav-item col-lg-6">Buscar Cursos</li>
+
 </nav>
 
 

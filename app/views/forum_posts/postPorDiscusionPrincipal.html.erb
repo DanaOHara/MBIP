@@ -1,28 +1,20 @@
-
 <%= form_for :forum_posts, :url => { :action => :postPorDiscusionPrincipal } do |f| %>
 
+<%= stylesheet_link_tag "basePantallas" %>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
- <div class="container-fluid">
-   <ul class="nav navbar-nav">
- <li> <%= link_to("Volver a discusiones del foro", :back)%></li>
-
-</ul>
-</div>
+<nav class="header navbar">
+  <li class="nav-item col-lg-6"> <%= link_to("Volver a discusiones del foro", :back)%></li>
 </nav>
 
 
-<%= stylesheet_link_tag "basePantallas" %>
 <div class="contenido container-fluid">
 <div class="row">
   <div class="col-md-12 titulo"><h1> <%= @forum_posts.pluck(:subject)[0] %></h1></div>
 </div>
 
-
 <% @forum_posts.each do |forum_posts| %>
 
 <div class="row">
-
 <div class="col-md-12 titulo"><h1><%= raw forum_posts.message%></h1></div>
 </div>
 <% end %>
@@ -30,15 +22,12 @@
  <%= link_to "Ver todos los mensajes del foro", controller: "forum_posts", action: "postRespuestas", discussion:  @forum_posts.pluck(:discussion)%>
 <%= link_to "Nuevo"%>
 
-<nav class="navbar align-items-end navbar-expand-lg navbar-light bg-light">
+</div>
+
+<nav class="footer navbar">
 
      <li class="nav-item col-lg-3"><p>Mis Cursos</p></li>
      <li class="nav-item col-lg-3"><p>Buscar cursos</p></li>
 
-
 </nav>
-
-
-
-
 <% end %>

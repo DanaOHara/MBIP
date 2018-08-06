@@ -1,15 +1,9 @@
 <%= form_for :forums, :url => { :action => :forosPorCurso } do |f| %>
 
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
- <div class="container-fluid">
-   <ul class="nav navbar-nav">
-  <li><%= link_to "Ir a eventos", controller: "events", action: "eventosPorCurso", courseid:  @forums.pluck(:course)%></li>
- <li><%= link_to "Ir a material", controller: "resources", action: "recursosPorCurso", course:  @forums.pluck(:course)%></li>
-</ul>
-</div>
+<nav class="header navbar">
+  <li class="nav-item col-lg-6"><%= link_to "Ir a eventos", controller: "events", action: "eventosPorCurso", courseid:  @forums.pluck(:course)%></li>
+  <li class="nav-item col-lg-6"><%= link_to "Ir a material", controller: "resources", action: "recursosPorCurso", course:  @forums.pluck(:course)%></li>
 </nav>
-
 
 
 <%= stylesheet_link_tag "basePantallas" %>
@@ -33,12 +27,10 @@
 
 </div>
 
-<nav class="footerMa navbar ">
+<nav class= "footer navbar" >
 
-     <li class="col-lg-6">Mis Cursos</li>
-     <li class="col-lg-6">Mis Cursos</li>
-
-</nav>
+     <li class="nav-item col-lg-6">Mis Cursos</li>
+     <li class="nav-item col-lg-6">Buscar Cursos</li>
 
 </nav>
 
