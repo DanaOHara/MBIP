@@ -37,6 +37,7 @@ def course
   else
 
 
+
     return  @mdl_context
       #render json: @context
 

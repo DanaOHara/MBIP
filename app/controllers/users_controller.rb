@@ -42,6 +42,13 @@ class UsersController < ApplicationController
 
    else
    # Por ahora la verificacion de la contrasena quedara en suspenso, con un email valido ira a los cursos del alumno
+#el siguiente codigo es para grabr el id de usuario en la cookie, DEBE sermovido a la verificación de contraseña cuando esta se peuda hacer de buena manera
+   cookies[:userid] = {
+   value: @user.pluck(:id),
+   expires: 1.hour,
+   domain: :all
+ }
+
     render :action =>"vContrasena"
    #@mdl_id = MdlUser.select(:id).where("email = ?", params[:email].concat("@usach.cl"))
    #render json: @user
