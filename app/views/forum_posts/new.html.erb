@@ -9,16 +9,11 @@
 
 <%= render 'form', forum_post: @forum_post %>
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
- <div class="container-fluid">
-   <div class="navbar-header">
-     <a class="navbar-brand" href="#"></a>
-   </div>
-   <ul class="nav navbar-nav">
-     <li class="active"><a href="#">Mis Cursos</a></li>
-     <li><a href="#">Buscar Cursos</a></li>
-     <li><a href="#">Mi Usuario</a></li>
-     <li><a href="#">Mis Mensajes</a></li>
-   </ul>
- </div>
-</nav>
+v<nav class="footer navbar ">
+
+
+
+  <nav class= "footer navbar" >
+       <%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]}, class:'nav-item  col-lg-6' %>
+      <%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id: cookies[:courseId]}, class:'nav-item  col-lg-6' %>
+  </nav>
