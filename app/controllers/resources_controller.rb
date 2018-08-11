@@ -32,6 +32,11 @@ def recursosPorCurso
 
   else
 
+    cookies[:courseId] = {
+    value: params[:course],
+    expires: 1.hour,
+    domain: :all
+          }
   return @mdl_resources
   #render json: @resources
   end
