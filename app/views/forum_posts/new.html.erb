@@ -2,18 +2,10 @@
 
 <%= stylesheet_link_tag "basePantallas" %>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
- <div class="container-fluid contenido">
-   <ul class="nav navbar-nav">
- <li> <%= link_to("Volver", :back)%></li>
-
-</ul>
-</div>
+<nav class="header navbar">
+  <li class="nav-item col-md-12"> <%= link_to("Volver", :back)%></li>
 </nav>
 
-<div class="row">
-
-</div>
 
 <%= render 'form', forum_post: @forum_post %>
 

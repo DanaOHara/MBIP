@@ -3,7 +3,7 @@
 <%= stylesheet_link_tag "basePantallas" %>
 
 <nav class="header navbar">
-  <li class="nav-item col-lg-6"> <%= link_to("Volver a discusiones del foro", :back)%></li>
+  <li class="nav-item"> <%= link_to("Volver a discusiones del foro", :back)%></li>
 </nav>
 
 
@@ -19,8 +19,8 @@
 </div>
 <% end %>
 
- <%= link_to "Ver todos los mensajes del foro", controller: "forum_posts", action: "postRespuestas", discussion:  @forum_posts.pluck(:discussion)%>
-<%= link_to "Nuevo"%>
+ <%= link_to "Ver todos los mensajes del foro",{ controller: "forum_posts", action: "postRespuestas", discussion:  @forum_posts.pluck(:discussion)}, class: 'btn btn-primary btn-lg  btn-block'%>
+<%= link_to "Nuevo mensaje",{controller: "forum_posts", action: "new"}, class: 'btn btn-primary btn-lg  btn-block'%>
 
 </div>
 
