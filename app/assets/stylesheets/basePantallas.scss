@@ -50,10 +50,13 @@ a
     bottom: 0;
     left: 0;
     width: 100%;
-    font-size: 250%;
     text-align: center !important;
     background-color:  black;
-    color: white;
+}
+
+.footer .nav-item a{
+  font-size: 250%;
+  color: white;
 }
 
 .header

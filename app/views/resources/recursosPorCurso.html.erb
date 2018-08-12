@@ -26,10 +26,8 @@
 
 <nav class= "footer navbar" >
 
-
-     <%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]}, class:'nav-item  col-lg-6' %>
-     <%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id: params[:course]}, class:'nav-item  col-lg-6' %>
-
+     <li class="nav-item col-lg-6"><%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]} %></li>
+     <li class="nav-item col-lg-6"><%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id: params[:course]} %></li>
 
 </nav>
 <% end %>
