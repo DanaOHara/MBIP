@@ -14,8 +14,8 @@ class ForumPostsController < ApplicationController
 
   # GET /forum_posts/new
   def new
-    @forum_post = ForumPost.new
-  end
+   @forum_post = ForumPost.new
+end
 
   # GET /forum_posts/1/edit
   def edit
@@ -137,6 +137,6 @@ class ForumPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forum_post_params
-      params.require(:forum_post).permit(:discussion, :parent, :userid, :created, :modified, :mailed, :subject, :message, :messageformat, :messagetrust, :attachment, :totalscore, :mailnow)
+      params.require(:forum_post).permit(:discussion, :parent, :userid, :subject, :message)
     end
 end
