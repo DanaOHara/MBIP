@@ -46,12 +46,6 @@ class UsersController < ApplicationController
 
    else
    # Por ahora la verificacion de la contrasena quedara en suspenso, con un email valido ira a los cursos del alumno
-#el siguiente codigo es para grabr el id de usuario en la cookie, DEBE sermovido a la verificación de contraseña cuando esta se peuda hacer de buena manera
-   cookies[:userid] = {
-   value: @user.pluck(:id),
-   expires: 1.hour,
-   domain: :all
- }
 
  cookies[:userMail] = {
  value:  params[:email] + @mail,
@@ -79,14 +73,26 @@ def contrasena
   #@true  =  puts `php -e #{ path +  "password.php"} #{ Shellwords.join(args) } `
   @output, status = Open3.capture2('php', '-e', '/home/dana/MABIP/password.php', params[:contrasena], @user.pluck(:password).flatten.join(' '))
  #return render json: @output
-  if @output == 0
+  if @output == "0"
+
+render :action =>"contrasenaErronea"
 
   else
-    redirect_to controller: "context", action: "course", id: @user.pluck(:id)
+    #el siguiente codigo es para grabr el id de usuario en la cookie, DEBE sermovido a la verificación de contraseña cuando esta se peuda hacer de buena manera
+     cookies[:userid] = {
+       value: @user.pluck(:id),
+       expires: 1.hour,
+       domain: :all
+     }
+    redirect_to :controller => 'contexts', :action => 'course', :id => @user.pluck(:id)
   end
 end
 
 def vContrasena
+
+end
+
+def contrasenaErronea
 
 end
 

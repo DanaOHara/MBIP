@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'users/emailErroneo', to: 'users#emailErroneo'
 
+  get 'users/contrasenaErronea', to: 'users#contrasenaErronea'
+
   get 'contexts/course/:id', to: 'contexts#course'
 
   get 'resources/recursosPorCurso/:course', to: 'resources#recursosPorCurso'
