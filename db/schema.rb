@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_222532) do
+ActiveRecord::Schema.define(version: 2018_08_12_201417) do
 
   create_table "assign", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", comment: "This table saves information about an instance of mod_assign", force: :cascade do |t|
     t.bigint "course", default: 0, null: false
@@ -1340,13 +1340,13 @@ ActiveRecord::Schema.define(version: 2018_08_11_222532) do
     t.bigint "userid", default: 0, null: false
     t.bigint "created", default: 0, null: false
     t.bigint "modified", default: 0, null: false
-    t.integer "mailed", limit: 1, default: 0, null: false
+    t.integer "mailed", default: 0, null: false
     t.string "subject", default: "", null: false
     t.text "message", limit: 4294967295, null: false
-    t.integer "messageformat", limit: 1, default: 0, null: false
-    t.integer "messagetrust", limit: 1, default: 0, null: false
-    t.string "attachment", limit: 100, default: "", null: false
-    t.integer "totalscore", limit: 2, default: 0, null: false
+    t.integer "messageformat", default: 1, null: false
+    t.integer "messagetrust", default: 0, null: false
+    t.string "attachment", default: "0", null: false
+    t.integer "totalscore", default: 0, null: false
     t.bigint "mailnow", default: 0, null: false
     t.index ["created"], name: "forupost_cre_ix"
     t.index ["discussion"], name: "forupost_dis_ix"
