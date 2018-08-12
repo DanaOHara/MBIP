@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  require 'shellwords'
+  require 'open3'
+
   before_action :set_user, only: [:show, :edit, :update, :destroy, :vemail]
 
   # GET /users
@@ -49,7 +53,13 @@ class UsersController < ApplicationController
    domain: :all
  }
 
-    render :action =>"vContrasena"
+ cookies[:userMail] = {
+ value:  params[:email] + @mail,
+ expires: 1.hour,
+ domain: :all
+}
+
+  redirect_to action: "vContrasena", email: " "
    #@mdl_id = MdlUser.select(:id).where("email = ?", params[:email].concat("@usach.cl"))
    #render json: @user
    #redirect_to  controller: 'users', action: 'vContrasena', :id => @user.pluck(:id)
@@ -59,6 +69,22 @@ class UsersController < ApplicationController
   end
 end
 
+def contrasena
+
+
+  @user = User.select(:id, :password).where("email = ?", cookies[:userMail])
+
+  path = File.dirname("/home/dana/MABIP/password.php") + '/'
+  args = [ params[:contrasena], @user.pluck(:password).flatten.join(' ')]
+  #@true  =  puts `php -e #{ path +  "password.php"} #{ Shellwords.join(args) } `
+  @output, status = Open3.capture2('php', '-e', '/home/dana/MABIP/password.php', params[:contrasena], @user.pluck(:password).flatten.join(' '))
+ #return render json: @output
+  if @output == 0
+
+  else
+    redirect_to controller: "context", action: "course", id: @user.pluck(:id)
+  end
+end
 
 def vContrasena
 

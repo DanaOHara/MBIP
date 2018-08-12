@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   get 'users/vEmail/:id', to: 'users#vEmail'
 
-  post 'users/vContrasena', to: 'users#vContrasena'
+  get 'users/vContrasena/:email', to: 'users#vContrasena'
+
+  post 'users/contrasena', to: 'users#contrasena'
 
   post 'users/email', to: 'users#email'
 
