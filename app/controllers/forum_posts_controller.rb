@@ -26,8 +26,23 @@ class ForumPostsController < ApplicationController
 
   def postPorDiscusionPrincipal
 
-      @forum_posts = ForumPost.select(:message, :subject, :discussion).where('discussion = ? ', params[:discussion]).where(parent: 0)
+      @forum_posts = ForumPost.where('discussion = ? ', params[:discussion]).where(parent: 0)
       #render json: @forum_posts
+
+      cookies[:discusion] = {
+        value: @forum_posts.pluck(:discussion),
+        expires: 10.minutes,
+      }
+
+      cookies[:parent] = {
+        value: @forum_posts.pluck(:id),
+        expires: 10.minutes,
+      }
+      cookies[:subject] = {
+        value: "Re: " + @forum_posts.pluck(:subject).to_s,
+        expires: 10.minutes,
+      }
+
       return  @forum_posts
 
     end
@@ -42,6 +57,20 @@ class ForumPostsController < ApplicationController
           render :action =>"sinPosts"
 
         else
+
+          cookies[:discusion] = {
+            value: @forum_posts.pluck(:discussion),
+            expires: 10.minutes,
+          }
+
+          cookies[:parent] = {
+            value: @forum_posts.pluck(:parent),
+            expires: 10.minutes,
+          }
+          cookies[:subject] = {
+            value: @forum_posts.pluck(:subject),
+            expires: 10.minutes,
+          }
 
           return @forum_posts
           #render json: @forum_posts
