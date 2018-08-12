@@ -24,10 +24,11 @@
 
 </div>
 
-<nav class="footer navbar">
+<% end %>
 
-     <li class="nav-item col-lg-3"><p>Mis Cursos</p></li>
-     <li class="nav-item col-lg-3"><p>Buscar cursos</p></li>
+<nav class= "footer navbar" >
+
+     <li class="nav-item col-lg-6"><%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]} %></li>
+     <li class="nav-item col-lg-6"><%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id: cookies[:courseId]} %></li>
 
 </nav>
-<% end %>
