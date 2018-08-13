@@ -71,7 +71,7 @@ def contrasena
   path = File.dirname("/home/dana/MABIP/password.php") + '/'
   args = [ params[:contrasena], @user.pluck(:password).flatten.join(' ')]
   #@true  =  puts `php -e #{ path +  "password.php"} #{ Shellwords.join(args) } `
-  @output, status = Open3.capture2('php', '-e', '/home/dana/MABIP/password.php', params[:contrasena], @user.pluck(:password).flatten.join(' '))
+  @output, status = Open3.capture2('/opt/lampp/bin/php-5.5.19', '-e', '/home/dana/MABIP/password.php', params[:contrasena], @user.pluck(:password).flatten.join(' '))
  #return render json: @output
   if @output == "0"
 
