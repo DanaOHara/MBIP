@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contenthash: MyString
+  pathnamehash: MyString
+  contextid: 
+  component: MyString
+  filearea: MyString
+  itemid: 
+  filepath: MyString
+  filename: MyString
+  userid: 
+  filesize: 
+  mimetype: MyString
+  status: 
+  source: MyText
+  author: MyString
+  license: MyString
+  timecreated: 
+  timemodified: 
+  sortorder: 
+  referencefileid: 
+
+two:
+  contenthash: MyString
+  pathnamehash: MyString
+  contextid: 
+  component: MyString
+  filearea: MyString
+  itemid: 
+  filepath: MyString
+  filename: MyString
+  userid: 
+  filesize: 
+  mimetype: MyString
+  status: 
+  source: MyText
+  author: MyString
+  license: MyString
+  timecreated: 
+  timemodified: 
+  sortorder: 
+  referencefileid: 

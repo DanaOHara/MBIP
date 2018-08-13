@@ -1,0 +1,112 @@
+<%= form_with(model: mdl_file, local: true) do |form| %>
+  <% if mdl_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_file.errors.count, "error") %> prohibited this mdl_file from being saved:</h2>
+
+      <ul>
+      <% mdl_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :contenthash %>
+    <%= form.text_field :contenthash %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pathnamehash %>
+    <%= form.text_field :pathnamehash %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contextid %>
+    <%= form.text_field :contextid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :component %>
+    <%= form.text_field :component %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filearea %>
+    <%= form.text_field :filearea %>
+  </div>
+
+  <div class="field">
+    <%= form.label :itemid %>
+    <%= form.text_field :itemid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filepath %>
+    <%= form.text_field :filepath %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filename %>
+    <%= form.text_field :filename %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filesize %>
+    <%= form.text_field :filesize %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mimetype %>
+    <%= form.text_field :mimetype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.text_area :source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license %>
+    <%= form.text_field :license %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timecreated %>
+    <%= form.text_field :timecreated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sortorder %>
+    <%= form.text_field :sortorder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :referencefileid %>
+    <%= form.text_field :referencefileid %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

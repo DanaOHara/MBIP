@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mdl Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contenthash</th>
+      <th>Pathnamehash</th>
+      <th>Contextid</th>
+      <th>Component</th>
+      <th>Filearea</th>
+      <th>Itemid</th>
+      <th>Filepath</th>
+      <th>Filename</th>
+      <th>Userid</th>
+      <th>Filesize</th>
+      <th>Mimetype</th>
+      <th>Status</th>
+      <th>Source</th>
+      <th>Author</th>
+      <th>License</th>
+      <th>Timecreated</th>
+      <th>Timemodified</th>
+      <th>Sortorder</th>
+      <th>Referencefileid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdl_files.each do |mdl_file| %>
+      <tr>
+        <td><%= mdl_file.contenthash %></td>
+        <td><%= mdl_file.pathnamehash %></td>
+        <td><%= mdl_file.contextid %></td>
+        <td><%= mdl_file.component %></td>
+        <td><%= mdl_file.filearea %></td>
+        <td><%= mdl_file.itemid %></td>
+        <td><%= mdl_file.filepath %></td>
+        <td><%= mdl_file.filename %></td>
+        <td><%= mdl_file.userid %></td>
+        <td><%= mdl_file.filesize %></td>
+        <td><%= mdl_file.mimetype %></td>
+        <td><%= mdl_file.status %></td>
+        <td><%= mdl_file.source %></td>
+        <td><%= mdl_file.author %></td>
+        <td><%= mdl_file.license %></td>
+        <td><%= mdl_file.timecreated %></td>
+        <td><%= mdl_file.timemodified %></td>
+        <td><%= mdl_file.sortorder %></td>
+        <td><%= mdl_file.referencefileid %></td>
+        <td><%= link_to 'Show', mdl_file %></td>
+        <td><%= link_to 'Edit', edit_mdl_file_path(mdl_file) %></td>
+        <td><%= link_to 'Destroy', mdl_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mdl File', new_mdl_file_path %>

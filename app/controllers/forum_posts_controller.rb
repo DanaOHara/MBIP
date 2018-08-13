@@ -92,6 +92,9 @@ end
   # POST /forum_posts
   # POST /forum_posts.json
   def create
+
+  params[:message] = "a" + params[:message].to_s + "s"
+
     @forum_post = ForumPost.new(forum_post_params)
 
     respond_to do |format|

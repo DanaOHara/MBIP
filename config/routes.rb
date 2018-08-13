@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mdl_files
   resources :contexts
   resources :courses
   resources :events
