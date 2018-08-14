@@ -18,7 +18,7 @@
 
 
                 <div class="col-lg-12"><h1><%= label_tag("Ingresa tu contraseña del correo Usach") %> </h1></div>
-                 <%=text_field_tag :contrasena,nil, class: "entrada" %>
+                 <%= password_field_tag :contrasena,nil, class: "entrada" %>
                <h1></h1>
                 <%= submit_tag "Ingresar", :class => "btn btn-primary btn-lg btn-block" %>
 
