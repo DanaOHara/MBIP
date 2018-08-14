@@ -57,5 +57,9 @@ Rails.application.routes.draw do
   post 'courses/cursos', to: 'courses#cursos'
 
   get 'courses/sinCursos/', to: 'courses#sinCursos'
+
+  get 'forum_posts/felicitaciones', to: 'forum_posts#felicitaciones'
+
+  get 'forum_posts/error', to: 'forum_posts#error'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

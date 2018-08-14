@@ -85,7 +85,11 @@ end
 
     end
 
+def felicitaciones
+end
 
+def error
+end
 
   ##############################################
 
@@ -97,16 +101,19 @@ end
 
     @forum_post.created = Time.now.to_i
     @forum_post.modified = Time.now.to_i
-  
 
-    respond_to do |format|
-      if @forum_post.save
-        format.html { redirect_to @forum_post, notice: 'Forum post was successfully created.' }
-        format.json { render :show, status: :created, location: @forum_post }
+
+
+        if @forum_post.message.nil? == true || @forum_post.message.blank? == true
+
+      render :action => "error"
+
       else
-        format.html { render :new }
-        format.json { render json: @forum_post.errors, status: :unprocessable_entity }
-      end
+
+      @forum_post.save
+
+      render :action => "felicitaciones"
+
     end
     #render json: params[:modified]
   end
