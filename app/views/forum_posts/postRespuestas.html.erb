@@ -12,22 +12,17 @@
   <div class="col-md-12 titulo"><h1> <%= @forum_posts.pluck(:subject)[1] %></h1></div>
 </div>
 
-
-
-
 <% @forum_posts.each do |forum_posts| %>
 
 <div class="row">
 
-<div class="col-md-12 titulo"><h1><%= raw forum_posts.message%></h1></div>
+<div class="col-md-12 post-answer-other"><p class="post"><%= raw forum_posts.message%></p></div>
 </div>
 <% end %>
 
  <%= link_to "Nuevo mensaje", {controller: "forum_posts", action: "new"}, class: 'btn btn-primary btn-lg  btn-block'%>
 
 </div>
-
-
 <% end %>
 <nav class= "footer navbar" >
 
