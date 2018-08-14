@@ -20,8 +20,12 @@
 
 <nav class="footer navbar ">
 
-     <li class="nav-item col-lg-6"><a href="#">Mis Cursos</a></li>
-     <li class="nav-item col-lg-6"><a href="#">Mis Cursos</a></li>
+  <nav class= "footer navbar" >
+
+       <li class="nav-item col-lg-12"><%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id:  cookies[:userid]} %></li>
+
+
+  </nav>
 
 </nav>
 <% end %>

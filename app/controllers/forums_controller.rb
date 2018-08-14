@@ -33,6 +33,12 @@ class ForumsController < ApplicationController
 
     else
 
+      cookies[:forum] = {
+        value: @forums.pluck(:id),
+        expires: 10.minutes,
+      }
+
+
     return  @forums
   #  render json: @forums
 
