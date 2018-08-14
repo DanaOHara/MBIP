@@ -49,6 +49,9 @@ def sinRecursos
 end
 
 def descarga
+  data = open("/opt/lampp/moodledata/filedir/a1/e6")
+    send_data data.read, filename: "a1e657432698a9d2765921ae22dfae39ef2fdef3", type: "application/pdf", disposition: 'inline', stream: 'true', buffer_size: '2048'
+
 end
 
 
