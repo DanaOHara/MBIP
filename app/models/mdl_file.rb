@@ -1,5 +1,5 @@
 class MdlFile < ApplicationRecord
 
-  self.table_name = "File"
+  self.table_name = "files"
 
 end

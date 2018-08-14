@@ -93,9 +93,11 @@ end
   # POST /forum_posts.json
   def create
 
-  params[:message] = "a" + params[:message].to_s + "s"
-
     @forum_post = ForumPost.new(forum_post_params)
+
+    @forum_post.created = Time.now.to_i
+    @forum_post.modified = Time.now.to_i
+  
 
     respond_to do |format|
       if @forum_post.save
@@ -106,6 +108,7 @@ end
         format.json { render json: @forum_post.errors, status: :unprocessable_entity }
       end
     end
+    #render json: params[:modified]
   end
 
   # PATCH/PUT /forum_posts/1
@@ -140,6 +143,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forum_post_params
-      params.require(:forum_post).permit(:discussion, :parent, :userid, :subject, :message)
+      params.require(:forum_post).permit(:discussion, :parent, :userid, :subject, :message, :created, :modified)
     end
 end

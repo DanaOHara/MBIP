@@ -17,6 +17,10 @@
 
     <%= form.hidden_field :subject, :value => cookies[:subject] %>
 
+    <%= form.hidden_field :created, :value => 0 %>
+
+    <%= form.hidden_field :modified, :value => 0 %>
+
     <%= form.text_area :message  %>
 
 
