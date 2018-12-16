@@ -15,7 +15,7 @@
 <% @resources.each do |resources| %>
 <div class="row area">
 
- <%= link_to resources.name, {controller: "resources", action: "descarga", course: resources.course, id: resources.id}, class: "area" %>
+ <%= link_to resources.name, {controller: "mdl_files", action: "descarga", course: resources.course, fileID: resources.id}, class: "area" %>
 
 
 </div>

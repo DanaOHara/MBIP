@@ -50,12 +50,7 @@ end
 
 def descarga
 
-
-  send_file(
-    "/opt/lampp/moodledata/filedir/a1/e6/a1e657432698a9d2765921ae22dfae39ef2fdef3",
-    filename: "PattoArchivo",
-    type: "application/pdf"
-  )
+  
 end
 
 

@@ -21,6 +21,12 @@ class MdlFilesController < ApplicationController
   def edit
   end
 
+
+
+def descarga
+
+
+end
   # POST /mdl_files
   # POST /mdl_files.json
   def create
