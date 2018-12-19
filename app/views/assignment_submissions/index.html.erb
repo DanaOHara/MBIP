@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assignment Submissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Assignment</th>
+      <th>Userid</th>
+      <th>Timecreated</th>
+      <th>Timemodified</th>
+      <th>Numfiles</th>
+      <th>Data1</th>
+      <th>Data2</th>
+      <th>Grade</th>
+      <th>Submissioncomment</th>
+      <th>Format</th>
+      <th>Teacher</th>
+      <th>Timemarked</th>
+      <th>Mailed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignment_submissions.each do |assignment_submission| %>
+      <tr>
+        <td><%= assignment_submission.assignment %></td>
+        <td><%= assignment_submission.userid %></td>
+        <td><%= assignment_submission.timecreated %></td>
+        <td><%= assignment_submission.timemodified %></td>
+        <td><%= assignment_submission.numfiles %></td>
+        <td><%= assignment_submission.data1 %></td>
+        <td><%= assignment_submission.data2 %></td>
+        <td><%= assignment_submission.grade %></td>
+        <td><%= assignment_submission.submissioncomment %></td>
+        <td><%= assignment_submission.format %></td>
+        <td><%= assignment_submission.teacher %></td>
+        <td><%= assignment_submission.timemarked %></td>
+        <td><%= assignment_submission.mailed %></td>
+        <td><%= link_to 'Show', assignment_submission %></td>
+        <td><%= link_to 'Edit', edit_assignment_submission_path(assignment_submission) %></td>
+        <td><%= link_to 'Destroy', assignment_submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assignment Submission', new_assignment_submission_path %>

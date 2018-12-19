@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :assignsubmission_files
+  resources :assignment_submissions
   resources :mdl_files
   resources :contexts
   resources :courses

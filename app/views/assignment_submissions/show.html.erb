@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @assignment_submission.assignment %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @assignment_submission.userid %>
+</p>
+
+<p>
+  <strong>Timecreated:</strong>
+  <%= @assignment_submission.timecreated %>
+</p>
+
+<p>
+  <strong>Timemodified:</strong>
+  <%= @assignment_submission.timemodified %>
+</p>
+
+<p>
+  <strong>Numfiles:</strong>
+  <%= @assignment_submission.numfiles %>
+</p>
+
+<p>
+  <strong>Data1:</strong>
+  <%= @assignment_submission.data1 %>
+</p>
+
+<p>
+  <strong>Data2:</strong>
+  <%= @assignment_submission.data2 %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @assignment_submission.grade %>
+</p>
+
+<p>
+  <strong>Submissioncomment:</strong>
+  <%= @assignment_submission.submissioncomment %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @assignment_submission.format %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @assignment_submission.teacher %>
+</p>
+
+<p>
+  <strong>Timemarked:</strong>
+  <%= @assignment_submission.timemarked %>
+</p>
+
+<p>
+  <strong>Mailed:</strong>
+  <%= @assignment_submission.mailed %>
+</p>
+
+<%= link_to 'Edit', edit_assignment_submission_path(@assignment_submission) %> |
+<%= link_to 'Back', assignment_submissions_path %>

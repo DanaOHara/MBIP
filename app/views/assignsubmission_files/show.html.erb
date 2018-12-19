@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @assignsubmission_file.assignment %>
+</p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= @assignsubmission_file.submission %>
+</p>
+
+<p>
+  <strong>Numfiles:</strong>
+  <%= @assignsubmission_file.numfiles %>
+</p>
+
+<%= link_to 'Edit', edit_assignsubmission_file_path(@assignsubmission_file) %> |
+<%= link_to 'Back', assignsubmission_files_path %>

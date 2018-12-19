@@ -1,0 +1,32 @@
+<%= form_with(model: assignsubmission_file, local: true) do |form| %>
+  <% if assignsubmission_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignsubmission_file.errors.count, "error") %> prohibited this assignsubmission_file from being saved:</h2>
+
+      <ul>
+      <% assignsubmission_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :assignment %>
+    <%= form.text_field :assignment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :submission %>
+    <%= form.text_field :submission %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numfiles %>
+    <%= form.text_field :numfiles %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

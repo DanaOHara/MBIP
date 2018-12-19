@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assignsubmission Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Assignment</th>
+      <th>Submission</th>
+      <th>Numfiles</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assignsubmission_files.each do |assignsubmission_file| %>
+      <tr>
+        <td><%= assignsubmission_file.assignment %></td>
+        <td><%= assignsubmission_file.submission %></td>
+        <td><%= assignsubmission_file.numfiles %></td>
+        <td><%= link_to 'Show', assignsubmission_file %></td>
+        <td><%= link_to 'Edit', edit_assignsubmission_file_path(assignsubmission_file) %></td>
+        <td><%= link_to 'Destroy', assignsubmission_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assignsubmission File', new_assignsubmission_file_path %>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assignment: 
+  userid: 
+  timecreated: 
+  timemodified: 
+  numfiles: 
+  data1: MyText
+  data2: MyText
+  grade: 
+  submissioncomment: MyText
+  format: 1
+  teacher: 
+  timemarked: 
+  mailed: false
+
+two:
+  assignment: 
+  userid: 
+  timecreated: 
+  timemodified: 
+  numfiles: 
+  data1: MyText
+  data2: MyText
+  grade: 
+  submissioncomment: MyText
+  format: 1
+  teacher: 
+  timemarked: 
+  mailed: false

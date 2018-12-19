@@ -1,0 +1,82 @@
+<%= form_with(model: assignment_submission, local: true) do |form| %>
+  <% if assignment_submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignment_submission.errors.count, "error") %> prohibited this assignment_submission from being saved:</h2>
+
+      <ul>
+      <% assignment_submission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :assignment %>
+    <%= form.text_field :assignment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timecreated %>
+    <%= form.text_field :timecreated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemodified %>
+    <%= form.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numfiles %>
+    <%= form.text_field :numfiles %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data1 %>
+    <%= form.text_area :data1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data2 %>
+    <%= form.text_area :data2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grade %>
+    <%= form.text_field :grade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :submissioncomment %>
+    <%= form.text_area :submissioncomment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :format %>
+    <%= form.number_field :format %>
+  </div>
+
+  <div class="field">
+    <%= form.label :teacher %>
+    <%= form.text_field :teacher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timemarked %>
+    <%= form.text_field :timemarked %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailed %>
+    <%= form.check_box :mailed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
