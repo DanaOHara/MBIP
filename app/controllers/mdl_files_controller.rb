@@ -22,11 +22,15 @@ class MdlFilesController < ApplicationController
   end
 
 
+###############################################################################
+def dowload
 
-def descarga
-
+  @mdl_file = MdlFile.select(:contenthash).where("timemodified = ?",params[:timemodified])
+  send_file '/opt/lampp/moodledata/filedir/a1/e6/a1e657432698a9d2765921ae22dfae39ef2fdef3'
 
 end
+
+###############################################################################
   # POST /mdl_files
   # POST /mdl_files.json
   def create

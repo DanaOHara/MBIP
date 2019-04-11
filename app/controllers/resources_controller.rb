@@ -24,7 +24,7 @@ class ResourcesController < ApplicationController
 
 def recursosPorCurso
 
-  @resources = Resource.select(:name,:course, :id).where("course = ?", params[:course])
+  @resources = Resource.select(:name,:course, :id, :timemodified).where("course = ?", params[:course])
 
   if @resources.nil? == true || @resources.blank? == true
 
@@ -50,7 +50,9 @@ end
 
 def descarga
 
-  
+
+#redirect_to controller: MdlFile, action: dowload, params[:timemodified]
+
 end
 
 

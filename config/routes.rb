@@ -65,5 +65,7 @@ Rails.application.routes.draw do
   get 'forum_posts/error', to: 'forum_posts#error'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'mdl_files/descarga/:course/:fileID', to: 'mdl_files#descarga'
+  get 'mdl_files/dowload/:timemodified', to: 'mdl_files#dowload'
+
+  get 'resources/descarga/:course/:timemodified', to: 'resources#descarga'
 end
