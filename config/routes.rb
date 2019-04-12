@@ -68,4 +68,6 @@ Rails.application.routes.draw do
   get 'mdl_files/dowload/:timemodified', to: 'mdl_files#dowload'
 
   get 'resources/descarga/:course/:timemodified', to: 'resources#descarga'
+
+  get 'resources/descargaINT/:timemodified', to: 'resources#descargaINT'
 end

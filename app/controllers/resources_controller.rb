@@ -37,7 +37,7 @@ def recursosPorCurso
     expires: 1.hour,
     domain: :all
           }
-  return @mdl_resources
+  return @resources
   #render json: @resources
   end
 
@@ -51,11 +51,20 @@ end
 def descarga
 
 
-#redirect_to controller: MdlFile, action: dowload, params[:timemodified]
+#redirect_to :controller MdlFile, :action dowload, params[:timemodified]
 
 end
 
+def descargaINT
+#  @context = Context.select(:fullname,'co.id').joins(" INNER JOIN role_assignments  ra ON  ra.contextid =  context.id INNER JOIN course co ON co.id = context.instanceid" ).where("ra.userid = ? ", params[:id])
 
+  @resources = Resource.select('file.contenthash').joins("INNER JOIN files file ON file.timemodified = resource.timemodified").where("file.mimetype != 'NULL' AND resource.timemodified = ?", params[:timemodified])
+  render json: @resources
+
+
+
+
+end
 
 
 
