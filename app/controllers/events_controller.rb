@@ -40,6 +40,7 @@ class EventsController < ApplicationController
       end
     end
 
+
     def sinEventos
 
       render :action =>"sinEventos"
@@ -49,6 +50,17 @@ class EventsController < ApplicationController
     def eventosDetalle
 
     end
+
+    def emailProf
+      #  @context = Context.select(:fullname,'co.id').joins(" INNER JOIN role_assignments  ra ON  ra.contextid =  context.id INNER JOIN course co ON co.id = context.instanceid" ).where("ra.userid = ? ", params[:id])
+
+      @mail = Event.select('usr.email').joins(" INNER JOIN user usr ON event.userid = usr.id"). where("event.id = ? ", params[:id])
+
+      render json: @mail
+
+
+    end
+
 
 
   ##########################################################
