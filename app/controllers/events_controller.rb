@@ -61,7 +61,13 @@ class EventsController < ApplicationController
 
     end
 
+def detalleEvento
 
+end
+
+def eventoCaduco
+
+end
 
   ##########################################################
 
