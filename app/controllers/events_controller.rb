@@ -49,6 +49,8 @@ class EventsController < ApplicationController
 
     def eventosDetalle
 
+      @events = Event.select(:name, :description, :timestart, :timemodified).where('id = ?', params[:eventid])
+      return @events
     end
 
     def emailProf
@@ -61,9 +63,7 @@ class EventsController < ApplicationController
 
     end
 
-def detalleEvento
 
-end
 
 def eventoCaduco
 

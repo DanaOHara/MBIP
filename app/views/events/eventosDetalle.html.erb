@@ -1,28 +1,35 @@
 
 <%= form_for :events, :url => { :action => :eventosDetalle } do |f| %>
 
-
 <%= stylesheet_link_tag "basePantallas" %>
-<div class="container-fluid">
-<div class = "Estilo">
 
-  <div  class="card">
+<nav class="header navbar">
+  <li class="nav-item col-lg-6"><%= link_to "Ir a material", controller: "resources", action: "recursosPorCurso", course: params[:courseid]%></li>
+  <li class="nav-item col-lg-6" ><%= link_to "Ir a foros", controller: "forums", action: "forosPorCurso", course: params[:courseid]%></li>
+</nav>
 
+<div class="contenido container-fluid">
+<div class="row">
+  <div class="col-md-12 titulo"><h1> <% @events.first.name %>  </h1></div>
+</div>
 
-    <div class="card-header"><h1>Sin eventos</h1></div>
+<% @events.each do |events| %>
 
-
-    <div class="list-group list-group-flush">
-
-      <div class="list-group-item">
-
-
-             <div class="col-lg-12"><h1>En este momento no hay eventos disponibles para este curso </h1></div>
-                 <%= link_to("Volver a mis cursos", :back, class: 'btn btn-primary btn-lg  btn-block')%>
-
-       </div>
-      </div>
-      </div>
-    </div>
+<div class="row">
+<div class="col-lg-12 area"> <% events.name %> </div>
+<div class="col-lg-12 area"> <% events.timestart %> </div>
+<div class="col-lg-12 area"> <% events.timemodified %></div>
 </div>
 <% end %>
+
+
+
+</div>
+
+<% end %>
+<nav class= "footer navbar" >
+
+
+     <li class="nav-item col-lg-6"><%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id: cookies[:courseId]} %></li>
+
+</nav>
