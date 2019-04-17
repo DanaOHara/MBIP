@@ -25,8 +25,8 @@ class MdlFilesController < ApplicationController
 ###############################################################################
 def dowload
 
-  @mdl_file = MdlFile.select(:contenthash).where("timemodified = ?",params[:timemodified])
-  send_file '/opt/lampp/moodledata/filedir/a1/e6/a1e657432698a9d2765921ae22dfae39ef2fdef3'
+#  @mdl_file = MdlFile.select(:contenthash).where("timemodified = ?",params[:timemodified])
+#  send_file '/opt/lampp/moodledata/filedir/a1/e6/a1e657432698a9d2765921ae22dfae39ef2fdef3'
 
 end
 

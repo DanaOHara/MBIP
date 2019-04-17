@@ -30,8 +30,6 @@ Rails.application.routes.draw do
 
   get 'resources/recursosPorCurso/:course', to: 'resources#recursosPorCurso'
 
-  get 'resources/descarga/:course/:id', to: 'resources#descarga'
-
   get 'events/eventosPorCurso/:courseid', to: 'events#eventosPorCurso'
 
   get 'events/eventosDetalle/:eventid/:courseid', to: 'events#eventosDetalle'
@@ -65,7 +63,8 @@ Rails.application.routes.draw do
   get 'forum_posts/error', to: 'forum_posts#error'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'mdl_files/dowload/:timemodified', to: 'mdl_files#dowload'
 
   get 'resources/descarga/:course/:timemodified', to: 'resources#descarga'
+
+  get 'resources/descargaINT/:timemodified', to: 'resources#descargaINT'
 end
