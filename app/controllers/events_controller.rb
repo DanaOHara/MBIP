@@ -49,8 +49,10 @@ class EventsController < ApplicationController
 
     def eventosDetalle
 
-      @events = Event.select(:name, :description, :timestart, :timemodified).where('id = ?', params[:eventid])
+      #@events = Event.select(:name, :description, :timestart, :timemodified, :id).where('id = ?', params[:eventid])
+        @events = Event.select(:name, :description, :timestart, :timemodified, :id,'usr.email').joins(" INNER JOIN user usr ON event.userid = usr.id"). where("event.id = ? ", params[:eventid])
       return @events
+      #render json: @events
     end
 
     def emailProf
