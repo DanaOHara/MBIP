@@ -50,20 +50,29 @@ class EventsController < ApplicationController
     def eventosDetalle
 
       #@events = Event.select(:name, :description, :timestart, :timemodified, :id).where('id = ?', params[:eventid])
-      @events = Event.select(:name, :description, :timestart, :timemodified, :id,'usr.email').joins(" INNER JOIN user usr ON event.userid = usr.id"). where("event.id = ? ", params[:eventid])
-      #return @events
+      @events = Event.select(:name, :description, :timestart, :timemodified, :id,:courseid,'usr.email').joins(" INNER JOIN user usr ON event.userid = usr.id"). where("event.id = ? ", params[:eventid])
+
+      if Time.at(@events.first.timestart).to_datetime < Date.today
+
+        render :action =>"eventoCaduco"
+
+      else
+
+      return @events
       #render json: @events
+      end
+
     end
 
-    def emailProf
+  #  def emailProf
       #  @context = Context.select(:fullname,'co.id').joins(" INNER JOIN role_assignments  ra ON  ra.contextid =  context.id INNER JOIN course co ON co.id = context.instanceid" ).where("ra.userid = ? ", params[:id])
 
-      @mail = Event.select('usr.email').joins(" INNER JOIN user usr ON event.userid = usr.id"). where("event.id = ? ", params[:id])
+  #    @mail = Event.select('usr.email').joins(" INNER JOIN user usr ON event.userid = usr.id"). where("event.id = ? ", params[:id])
 
-      render json: @mail
+  #    render json: @mail
 
 
-    end
+  #  end
 
 
 
@@ -76,8 +85,20 @@ class EventsController < ApplicationController
       email = params[:event][:email]
       #body = params[:body]
       EventMailer.assignment_email(email).deliver_now!
-      redirect_to events_path
+
+      #render json: params[:event][:courseid]
+
+     redirect_to :action => "envioExitoso", :courseid => params[:event][:courseid]
     end
+
+    def envioExitoso
+
+
+
+    end
+
+
+
 
   ##########################################################
 

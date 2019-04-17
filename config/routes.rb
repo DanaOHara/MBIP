@@ -72,6 +72,8 @@ Rails.application.routes.draw do
 
   post 'events/enviarCorreo', to: 'events#enviarCorreo'
 
+  get 'events/envioExitoso/:courseid', to: 'events#envioExitoso'
+
   match 'enviarCorreo', to: 'event#send_mail', via: 'post'
 
 end
