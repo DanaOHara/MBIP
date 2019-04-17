@@ -71,9 +71,9 @@ class EventsController < ApplicationController
 
     def enviarCorreo
       #name = params[:name]
-      #email = params[:email]
+      email = params[:email]
       #body = params[:body]
-      EventMailer.assignment_email().deliver_now!
+      EventMailer.assignment_email(email).deliver
       redirect_to events_path
     end
 
