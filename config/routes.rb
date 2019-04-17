@@ -70,4 +70,8 @@ Rails.application.routes.draw do
 
   get 'events/emailProf/:id', to: 'events#emailProf'
 
+  post 'events/enviarCorreo', to: 'events#enviarCorreo'
+
+  match 'enviarCorreo', to: 'event#send_mail', via: 'post'
+
 end

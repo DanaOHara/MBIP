@@ -1,5 +1,5 @@
 
-<%= form_for :events, :url => { :action => :eventosDetalle } do |f| %>
+<%= form_for :events, :url => { :action => :enviarCorreo } do |f| %>
 
 <%= stylesheet_link_tag "basePantallas" %>
 
@@ -20,6 +20,8 @@
     <div class="col-lg-12 area"> <%= e.timemodified %></div>
   </div>
   <% end %>
+
+  <%= submit_tag 'Enviar Correo', class: 'btn btn-default' %>
 
 
 

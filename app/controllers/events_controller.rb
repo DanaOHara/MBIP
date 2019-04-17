@@ -65,9 +65,17 @@ class EventsController < ApplicationController
 
 
 
-def eventoCaduco
+    def eventoCaduco
 
-end
+    end
+
+    def enviarCorreo
+      #name = params[:name]
+      #email = params[:email]
+      #body = params[:body]
+      EventMailer.assignment_email().deliver_now!
+      redirect_to events_path
+    end
 
   ##########################################################
 
