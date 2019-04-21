@@ -49,10 +49,11 @@ def sinRecursos
 end
 
 def descarga
-  respond_to do |format|
-    @url = "/resources/descargaINT?var=#{params[:timemodified]}"
-    format.js {render :partial => "downloadFile"}
-  end
+
+    @resources = Resource.select(:name,'file.contenthash', 'file.mimetype').joins("INNER JOIN files file ON file.timemodified = resource.timemodified").where("file.mimetype != 'NULL' AND resource.timemodified = ?", params[:timemodified])
+    #render json:@resources
+    send_file  '/opt/lampp/moodledata/filedir/' + @resources.first.contenthash[0..1] +  '/'+ @resources.first.contenthash[2..3]+'/'+@resources.first.contenthash+'', :type => @resources.first.mimetype, :filename => @resources.first.name
+
 end
 
 def descargaINT(var)
