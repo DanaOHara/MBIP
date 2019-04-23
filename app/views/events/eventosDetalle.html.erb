@@ -22,6 +22,12 @@
 
   </div>
   <% end %>
+  <input type=hidden name="files_list" id='fileslist'>
+  <!-- We use this <div> element to initialize our Dropzone -->
+  <div id="mydropzone" class="dropzone"></div>
+  <!-- This <div> elements shows a suitable message after a successful upload. -->
+  <div id="msgBoard"></div>
+  <br>
 
   <%= submit_tag 'Enviar Correo', class: 'btn btn-primary btn-lg btn-block fixed-bottom' %>
 
@@ -32,3 +38,35 @@
 <nav class= "footer navbar" >
    <li class="nav-item col-lg-6"><%= link_to "Buscar cursos", {controller: "courses", action: "buscar", id: cookies[:courseId]} %></li>
 </nav> -->
+<%= content_for(:javascript) do %>
+<!-- include the dropzone library itself. -->
+<%= javascript_include_tag "dropzone" %>
+<% end %>
+
+
+<script type="text/javascript">
+  var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
+  Dropzone.autoDiscover = false;
+  var myDropzone = new Dropzone("div#mydropzone",{
+    url: "<%= request.base_url %>/uploadfiles",
+    autoProcessQueue: true,
+    uploadMultiple: false,
+    addRemoveLinks:true,
+    parallelUploads:10,
+    params:{
+      'authenticity_token':  AUTH_TOKEN
+    },
+    successmultiple: function(data,response){
+      $('#msgBoard').append(response.message).addClass("alert alert-success");
+      $('#msgBoard').delay(2000).fadeOut();
+      $('#fileslist').val(response.filesList);
+      $('#myForm').off('submit').submit();
+    }
+  });
+  $('#myForm').submit(function(e){
+  if(myDropzone.getQueuedFiles().length > 0){
+    e.preventDefault();
+    myDropzone.processQueue();
+  }
+});
+  </script>

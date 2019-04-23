@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( baseMensajes.css )
 
 Rails.application.config.assets.precompile += %w( basePantallas.css )
+Rails.application.config.assets.precompile += %w( dropzone.js )
