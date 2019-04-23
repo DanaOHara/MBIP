@@ -97,7 +97,23 @@ class EventsController < ApplicationController
 
     end
 
-
+    def upload
+      f = params[:file] # Take the files which are sent by HTTP POST request.
+      #time_footprint = Time.now.to_i.to_formatted_s(:number) # Generate a unique number to rename the files to prevent duplication
+        # these two following comments are some useful methods to debug
+        # abort f.class.inspect -> It is similar to var_dump($variable) in PHP.
+        # abort f.is_a?(Array).inspect -> With "is_a?" method, you can find the type of variable
+        # abort f[1].original_filename.inspect
+        # The following snippet saves the uploaded content in '#{Rails.root}/public/uploads' with a name which contains a time footprint + the original file
+        # reference: http://guides.rubyonrails.org/form_helpers.html
+        File.open(Rails.root.join('public', 'uploads', f.original_filename), 'wb') do |file|
+          file.write(f.read)
+          #File.rename(file, 'public/uploads/' + time_footprin + f[1].original_filename)
+          File.rename(file, 'public/uploads/' + f.original_filename)
+        end
+      files_list = Dir['public/uploads/*'].to_json #get a list of all files in the {public/uploads} directory and make a JSON to pass to the server
+      render json: { message: 'You have successfully uploded your images.', files_list: files_list } #return a JSON object amd success message if uploading is successful
+    end
 
 
   ##########################################################

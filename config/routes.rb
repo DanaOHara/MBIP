@@ -76,4 +76,6 @@ Rails.application.routes.draw do
 
   match 'enviarCorreo', to: 'event#send_mail', via: 'post'
 
+  post 'uploadfiles'=>'events#upload'
+
 end
