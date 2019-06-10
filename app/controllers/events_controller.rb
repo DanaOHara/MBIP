@@ -57,7 +57,10 @@ class EventsController < ApplicationController
         render :action =>"eventoCaduco"
 
       else
-
+        cookies[:eventId] = {
+          value: @events.pluck(:id),
+          expires: 10.minutes,
+        }
       return @events
       #render json: @events
       end
@@ -99,6 +102,11 @@ class EventsController < ApplicationController
 
     def upload
       f = params[:file] # Take the files which are sent by HTTP POST request.
+      event_id = cookies[:eventId].to_s
+      user_id = cookies[:userid].to_s
+      course_id = cookies[:courseId].to_s
+      timestamp = DateTime.now.to_time.to_i.to_s
+      file_route = Rails.root.join('public', 'uploads', course_id, event_id, user_id, timestamp, f.original_filename)
       #time_footprint = Time.now.to_i.to_formatted_s(:number) # Generate a unique number to rename the files to prevent duplication
         # these two following comments are some useful methods to debug
         # abort f.class.inspect -> It is similar to var_dump($variable) in PHP.
@@ -106,12 +114,16 @@ class EventsController < ApplicationController
         # abort f[1].original_filename.inspect
         # The following snippet saves the uploaded content in '#{Rails.root}/public/uploads' with a name which contains a time footprint + the original file
         # reference: http://guides.rubyonrails.org/form_helpers.html
-        File.open(Rails.root.join('public', 'uploads', f.original_filename), 'wb') do |file|
+        dirname = File.dirname(file_route)
+        unless File.directory?(dirname)
+          FileUtils.mkdir_p(dirname)
+        end
+        File.open(file_route, 'wb') do |file|
           file.write(f.read)
           #File.rename(file, 'public/uploads/' + time_footprin + f[1].original_filename)
-          File.rename(file, 'public/uploads/' + f.original_filename)
+          File.rename(file, file_route)
         end
-      files_list = Dir['public/uploads/*'].to_json #get a list of all files in the {public/uploads} directory and make a JSON to pass to the server
+      files_list = Dir[dirname + '/*'].to_json #get a list of all files in the {public/uploads} directory and make a JSON to pass to the server
       render json: { message: 'You have successfully uploded your images.', files_list: files_list } #return a JSON object amd success message if uploading is successful
     end
 
