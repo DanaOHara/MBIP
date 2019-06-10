@@ -86,8 +86,10 @@ class EventsController < ApplicationController
     def enviarCorreo
       #name = params[:name]
       email = params[:event][:email]
+      file_route = cookies[:fileRoute]
+      file_name = cookies[:fileName]
       #body = params[:body]
-      EventMailer.assignment_email(email).deliver_now!
+      EventMailer.with(email: email, file_route: file_route, file_name: file_name).assignment_email.deliver_now!
 
       #render json: params[:event][:courseid]
 
@@ -122,6 +124,14 @@ class EventsController < ApplicationController
           file.write(f.read)
           #File.rename(file, 'public/uploads/' + time_footprin + f[1].original_filename)
           File.rename(file, file_route)
+          cookies[:fileRoute] = {
+            value:file_route,
+            expires: 10.minutes,
+          }
+          cookies[:fileName] = {
+            value:f.original_filename,
+            expires: 10.minutes,
+          }
         end
       files_list = Dir[dirname + '/*'].to_json #get a list of all files in the {public/uploads} directory and make a JSON to pass to the server
       render json: { message: 'You have successfully uploded your images.', files_list: files_list } #return a JSON object amd success message if uploading is successful
