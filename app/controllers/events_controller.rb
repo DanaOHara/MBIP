@@ -27,6 +27,11 @@ class EventsController < ApplicationController
 
       @events = Event.select(:id, :name, :courseid).where("courseid = ?", params[:courseid])
 
+      cookies[:courseId] = {
+          value: @events.pluck(:courseid),
+          expires: 10.minutes,
+        }
+
       if @events.nil? == true || @events.blank? == true
 
       redirect_to :action =>"sinEventos", :courseid => params[:courseid]

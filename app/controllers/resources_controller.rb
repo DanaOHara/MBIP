@@ -50,17 +50,16 @@ end
 
 def descarga
 
+    render :action =>"descargaINT"
+
     @resources = Resource.select(:name,'file.contenthash', 'file.mimetype').joins("INNER JOIN files file ON file.timemodified = resource.timemodified").where("file.mimetype != 'NULL' AND resource.timemodified = ?", params[:timemodified])
     #render json:@resources
     send_file  '/opt/lampp/moodledata/filedir/' + @resources.first.contenthash[0..1] +  '/'+ @resources.first.contenthash[2..3]+'/'+@resources.first.contenthash+'', :type => @resources.first.mimetype, :filename => @resources.first.name
-
+    #render :action => "descarga"
 end
 
-def descargaINT(var)
-#  @context = Context.select(:fullname,'co.id').joins(" INNER JOIN role_assignments  ra ON  ra.contextid =  context.id INNER JOIN course co ON co.id = context.instanceid" ).where("ra.userid = ? ", params[:id])
+def descargaINT
 
-  @url = '/resources/descarga/' + params[:course] + '/' + params[:timemodified]
-  format.js {render :partial => 'downloadalert'}
 end
 
 ##########################################################
