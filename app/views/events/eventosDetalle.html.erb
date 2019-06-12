@@ -22,11 +22,30 @@
 
   </div>
   <% end %>
+  <p class="clickable">Arrastre un archivo a esta ventana, o haga click aquí para cargar su archivo.</p>
   <input type=hidden name="files_list" id='fileslist'>
-  <!-- We use this <div> element to initialize our Dropzone -->
-  <div id="mydropzone" class="dropzone"></div>
-  <!-- This <div> elements shows a suitable message after a successful upload. -->
-  <div id="msgBoard"></div>
+  <div class="table table-striped" class="files" id="previews">
+
+    <div id="template" class="row">
+      <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-12">
+            <p class="name" data-dz-name></p>
+            <strong class="error text-danger" data-dz-errormessage></strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <button data-dz-remove class="btn btn-danger delete btn-lg btn-block">
+            <i class="glyphicon glyphicon-trash"></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
   <br>
 
   <%= submit_tag 'Enviar Correo', class: 'btn btn-primary btn-lg btn-block fixed-bottom' %>
@@ -45,28 +64,21 @@
 
 
 <script type="text/javascript">
+
+  var previewNode = document.querySelector("#template");
+  previewNode.id = "";
+  var previewTemplate = previewNode.parentNode.innerHTML;
+  previewNode.parentNode.removeChild(previewNode);
   var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
-  Dropzone.autoDiscover = false;
-  var myDropzone = new Dropzone("div#mydropzone",{
+
+  var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
     url: "<%= request.base_url %>/uploadfiles",
-    autoProcessQueue: true,
-    uploadMultiple: false,
-    addRemoveLinks:true,
-    parallelUploads:10,
+    maxFiles: 1,
+    previewTemplate: previewTemplate,
+    previewsContainer: "#previews", // Define the container to display the previews
+    clickable: ".clickable", // Define the element that should be used as click trigger to select files.
     params:{
       'authenticity_token':  AUTH_TOKEN
     },
-    successmultiple: function(data,response){
-      $('#msgBoard').append(response.message).addClass("alert alert-success");
-      $('#msgBoard').delay(2000).fadeOut();
-      $('#fileslist').val(response.filesList);
-      $('#myForm').off('submit').submit();
-    }
   });
-  $('#myForm').submit(function(e){
-  if(myDropzone.getQueuedFiles().length > 0){
-    e.preventDefault();
-    myDropzone.processQueue();
-  }
-});
   </script>
