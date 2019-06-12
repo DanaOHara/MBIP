@@ -30,6 +30,7 @@ def recursosPorCurso
 
   redirect_to :action =>"sinRecursos", :course => params[:course]
 
+
   else
 
     cookies[:courseId] = {
@@ -38,29 +39,42 @@ def recursosPorCurso
     domain: :all
           }
   return @resources
-  #render json: @resources
+
   end
 
 end
 
 def sinRecursos
 
-
+ render :sinRecursos
 end
+
+
+
 
 def descarga
 
-    render :action =>"descargaINT"
+#  @resources = Resource.select(:name,'file.contenthash', 'file.mimetype').joins("INNER JOIN files file ON file.timemodified = resource.timemodified").where("file.mimetype != 'NULL' AND resource.timemodified = ?", params[:timemodified])
+  #@var = '/opt/lampp/moodledata/filedir/' + @resources.first.contenthash[0..1] +  '/'+ @resources.first.contenthash[2..3]+'/'+@resources.first.contenthash
+      cookies[:timeModified] = {
+      value: params[:timemodified],
+      expires: 10.minutes,
+      domain: :all
+            }
 
-    @resources = Resource.select(:name,'file.contenthash', 'file.mimetype').joins("INNER JOIN files file ON file.timemodified = resource.timemodified").where("file.mimetype != 'NULL' AND resource.timemodified = ?", params[:timemodified])
-    #render json:@resources
-    send_file  '/opt/lampp/moodledata/filedir/' + @resources.first.contenthash[0..1] +  '/'+ @resources.first.contenthash[2..3]+'/'+@resources.first.contenthash+'', :type => @resources.first.mimetype, :filename => @resources.first.name
-    #render :action => "descarga"
+
+
 end
 
 def descargaINT
 
+  @resources = Resource.select(:name,'file.contenthash', 'file.mimetype').joins("INNER JOIN files file ON file.timemodified = resource.timemodified").where("file.mimetype != 'NULL' AND resource.timemodified = ?", cookies[:timeModified]   )
+     #render json:@resources
+     send_file  '/opt/lampp/moodledata/filedir/' + @resources.first.contenthash[0..1] +  '/'+ @resources.first.contenthash[2..3]+'/'+@resources.first.contenthash+'', :type => @resources.first.mimetype, :filename => @resources.first.name
+ #render :action => "descarga"
+
 end
+
 
 ##########################################################
   # POST /resources

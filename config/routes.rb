@@ -66,7 +66,7 @@ Rails.application.routes.draw do
 
   get 'resources/descarga/:course/:timemodified', to: 'resources#descarga'
 
-  get 'resources/descargaINT/:timemodified', to: 'resources#descargaINT'
+  get 'resources/descargaINT/:variablePatito', to: 'resources#descargaINT'
 
   get 'events/emailProf/:id', to: 'events#emailProf'
 
