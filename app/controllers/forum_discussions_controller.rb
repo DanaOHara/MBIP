@@ -14,7 +14,7 @@ class ForumDiscussionsController < ApplicationController
 
   # GET /forum_discussions/new
   def new
-    @forum_discussion = ForumDiscussion.new
+    raise @forum_discussion.inspect
   end
 
   # GET /forum_discussions/1/edit

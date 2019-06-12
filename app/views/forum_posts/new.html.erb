@@ -7,8 +7,7 @@
 
 <%= form_for @forum_post, url: {action: "create"} do |form| %>
 
-  <div class="field">
-
+  <div class="field center-block">
     <%= form.hidden_field :discussion, :value => cookies[:discusion] %>
 
     <%= form.hidden_field :parent,  :value =>  cookies[:parent]%>
@@ -20,10 +19,7 @@
     <%= form.hidden_field :created, :value => 0 %>
 
     <%= form.hidden_field :modified, :value => 0 %>
-
-    <%= form.text_area :message  %>
-
-
+    <%= form.text_area :message, rows: 15, class: 'col-lg-10 forum-post-area'%>
     <%= submit_tag "Ingresar", :class => "btn btn-primary btn-lg btn-block" %>
 
   </div>

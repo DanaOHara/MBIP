@@ -15,7 +15,7 @@ class ForumPostsController < ApplicationController
   # GET /forum_posts/new
   def new
    @forum_post = ForumPost.new
-end
+  end
 
   # GET /forum_posts/1/edit
   def edit
