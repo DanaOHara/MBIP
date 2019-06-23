@@ -1,15 +1,27 @@
 <%= form_for :courses, :url => { :action => :cursos} do |f| %>
+<%= stylesheet_link_tag "basePantallas" %>
 
+
+<div class="contenido container-fluid">
 <div class="row">
-  <div class="col-md-12 courseTitle"><h1>Resultados de la busqueda</h1></div>
+  <div class="col-md-12 titulo"><h1>Resultados de la busqueda</h1></div>
 </div>
+
 <% @course.each do |course| %>
 
-<div class= "footer navbar ">
-<%= link_to course.fullname, controller: "resources", action: "recursosPorCurso", course: course.id, class: 'btn btn-primary btn-lg  btn-block'%>
+<div class="row area">
+
+<%= link_to course.fullname, controller: "resources", action: "recursosPorCurso", course: course.id,class: "area"%>
+
 </div>
+
 <% end %>
 
+<nav class= "footer navbar" >
 
+     <li class="nav-item col-lg-6"><%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]} %></li>
+     
+
+</nav>
 
 <% end %>
