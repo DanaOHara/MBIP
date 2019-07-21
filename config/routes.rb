@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   resources :forum_discussions
   resources :forum_posts
   resources :forums
-  resources :resources
+  resources :resources do
+    member do
+      get 'resources/add_course/:id', to: 'resources#addCourse', as: 'add_course'
+    end
+  end
   resources :role_assignments
   resources :users
 

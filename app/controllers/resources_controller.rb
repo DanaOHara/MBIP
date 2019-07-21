@@ -24,21 +24,39 @@ class ResourcesController < ApplicationController
 
 def recursosPorCurso
 
+  course_ids = []
+
   @resources = Resource.select(:name,:course, :id, :timemodified).where("course = ?", params[:course])
 
-  if @resources.nil? == true || @resources.blank? == true
+  @my_courses = Context.select(:fullname,'co.id').joins(" INNER JOIN role_assignments  ra ON  ra.contextid =  context.id INNER JOIN course co ON co.id = context.instanceid" ).where("ra.userid = ? ", cookies[:userid])
 
-  redirect_to :action =>"sinRecursos", :course => params[:course]
+  @my_courses.each do |course|
+    course_ids.push(course.id)
+  end
 
+  if course_ids.include?(params[:course].to_i)
+
+    raise 'Curso inscrito'.inspect
+
+    if @resources.nil? == true || @resources.blank? == true
+
+      redirect_to :action =>"sinRecursos", :course => params[:course]
+
+
+    else
+
+      cookies[:courseId] = {
+        value: params[:course],
+        expires: 1.hour,
+        domain: :all
+      }
+      return @resources
+
+    end
 
   else
 
-    cookies[:courseId] = {
-    value: params[:course],
-    expires: 1.hour,
-    domain: :all
-          }
-  return @resources
+    redirect_to add_course_resource_path(params[:course])
 
   end
 
@@ -47,6 +65,10 @@ end
 def sinRecursos
 
  render :sinRecursos
+end
+
+def addCourse
+  raise params.inspect
 end
 
 
