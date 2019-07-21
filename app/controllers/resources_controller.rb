@@ -35,9 +35,6 @@ def recursosPorCurso
   end
 
   if course_ids.include?(params[:course].to_i)
-
-    raise 'Curso inscrito'.inspect
-
     if @resources.nil? == true || @resources.blank? == true
 
       redirect_to :action =>"sinRecursos", :course => params[:course]
@@ -50,7 +47,6 @@ def recursosPorCurso
         expires: 1.hour,
         domain: :all
       }
-      return @resources
 
     end
 
@@ -68,6 +64,8 @@ def sinRecursos
 end
 
 def addCourse
+  @course = Course.select(:id).all
+  raise @resources.inspect
   raise params.inspect
 end
 
