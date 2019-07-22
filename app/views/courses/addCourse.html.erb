@@ -1,0 +1,32 @@
+<%= form_for :courses, :url => { :action => :cursos} do |f| %>
+
+
+<%= stylesheet_link_tag "basePantallas" %>
+<div class="contenido container-fluid">
+  <div class="row">
+    <div class="col-md-12 titulo"><h1>Curso: <%= @course.fullname %></h1></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 titulo"><h1>Profesor: <%= @professor.firstname %> <%= @professor.lastname %></h1></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 titulo">
+      <h1><%= link_to 'Solicitar inscripción de curso', register_course_courses_path(cookies[:userid], course_id: @course.id) %></h1>
+    </div>
+  </div>
+
+</div>
+
+
+<nav class="footer navbar ">
+
+  <nav class= "footer navbar" >
+
+       <li class="nav-item col-lg-12"><%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]} %></li>
+
+
+  </nav>
+
+</nav>
+
+<% end %>

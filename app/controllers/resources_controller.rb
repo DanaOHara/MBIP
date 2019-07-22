@@ -52,7 +52,7 @@ def recursosPorCurso
 
   else
 
-    redirect_to add_course_resource_path(params[:course])
+    redirect_to add_course_course_path(params[:course])
 
   end
 
@@ -62,15 +62,6 @@ def sinRecursos
 
  render :sinRecursos
 end
-
-def addCourse
-  @course = Course.select(:id).all
-  raise @resources.inspect
-  raise params.inspect
-end
-
-
-
 
 def descarga
 

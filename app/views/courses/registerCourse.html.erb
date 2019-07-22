@@ -1,0 +1,24 @@
+<%= form_for :courses, :url => { :action => :cursos} do |f| %>
+
+
+<%= stylesheet_link_tag "basePantallas" %>
+<div class="contenido container-fluid">
+  <div class="row">
+    <div class="col-md-12 titulo"><h1>Se ha solicitado la inscripción del curso a su profesor.</h1></div>
+  </div>
+
+</div>
+
+
+<nav class="footer navbar ">
+
+  <nav class= "footer navbar" >
+
+       <li class="nav-item col-lg-12"><%= link_to "Mis cursos", {controller: "contexts", action: "course", id:  cookies[:userid]} %></li>
+
+
+  </nav>
+
+</nav>
+
+<% end %>

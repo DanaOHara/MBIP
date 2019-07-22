@@ -53,6 +53,20 @@ def sinCursos
 
 end
 
+def addCourse
+  @course = Course.select(:id, :fullname).where('id = ?', params[:id]).first
+  @professor = User.select(:id, :firstname, :lastname, :email).joins('INNER JOIN role_assignments ra on user.id = ra.userid INNER JOIN context ctx on ra.contextid = ctx.id').where('ctx.contextlevel = 50 and ra.roleid = 3 and ctx.instanceid = ?', params[:id]).first
+end
+
+def registerCourse
+  @course = Course.select(:id, :fullname).where('id = ?', params[:id]).first
+  @alumn = User.select(:id, :firstname, :lastname, :email).find(cookies[:userid])
+  @alumn_name = @alumn.firstname + ' ' + @alumn.lastname
+  @professor = User.select(:id, :firstname, :lastname, :email).joins('INNER JOIN role_assignments ra on user.id = ra.userid INNER JOIN context ctx on ra.contextid = ctx.id').where('ctx.contextlevel = 50 and ra.roleid = 3 and ctx.instanceid = ?', params[:course_id]).first
+  @professor_name = @professor.firstname + ' ' + @professor.lastname
+  CourseMailer.with(email: @professor.email, alumn: @alumn_name, professor: @professor_name, course: @course.fullname).course_register_email.deliver_now!
+end
+
 ##############################################
 
   # POST /courses

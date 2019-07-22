@@ -3,16 +3,19 @@ Rails.application.routes.draw do
   resources :assignment_submissions
   resources :mdl_files
   resources :contexts
-  resources :courses
+  resources :courses do
+    member do
+      get 'courses/add_course/:id', to: 'courses#addCourse', as: 'add_course'
+    end
+    collection do
+      get 'courses/register_course/:id', to: 'courses#registerCourse', as: 'register_course'
+    end
+  end
   resources :events
   resources :forum_discussions
   resources :forum_posts
   resources :forums
-  resources :resources do
-    member do
-      get 'resources/add_course/:id', to: 'resources#addCourse', as: 'add_course'
-    end
-  end
+  resources :resources
   resources :role_assignments
   resources :users
 
